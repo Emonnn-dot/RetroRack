@@ -19,26 +19,38 @@ public class Shop
 
     public void viewInventory()
     {
-        System.out.println("---INVENTORY---");
+        System.out.println("---RETRORACK INVENTORY---");
 
         if(inventory.isEmpty()) // Check if empty or not
         {
-            System.out.println("Rack is empty!! pls put some itemss;)");
+            System.out.println("Rack is empty!! pls come back later;)");
         }
         else
         {
-            for(Item i : inventory) // For each item in inventory
+            for(int i = 0; i < inventory.size(); i++) // For each item in inventory
             {
-                // Print details
-                System.out.println("--------------------------------");
-                System.out.println("Name: " +  i.getName());
-                System.out.println("Price: " +  i.getPrice());
-                System.out.println("Size: " +  i.getSize());
-                System.out.println("Condition: " +  i.getCondition());
-                System.out.println("--------------------------------");
-            }
+                Item item = inventory.get(i); // Getting the item based on index
 
+                // Print details
+                System.out.println((i + 1) + ". " +  item.getName()
+                        + " [" + item.getSize()
+                + "] (RM " + item.getPrice() + ") "
+                + "- " + item.getCondition());
+            }
+            System.out.println("--------------------------------");
             System.out.println("Thats the end of the listtt...");
         }
+    }
+
+    public Item sellItem(int choice) // Remove item from the list (item sold)
+    {
+        int actIndex = choice - 1; // Getting the actual index
+        if(actIndex < 0 || actIndex >= inventory.size()) // Validation check
+        {
+            System.out.println("Sorry, that item does not exist!!");
+            return null;
+        }
+
+        return inventory.remove(actIndex); // Remove item from list
     }
 }
