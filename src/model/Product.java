@@ -16,11 +16,11 @@ public class Product {
         this.stockQuantity = stockQuantity;
     }
 
-    // Constructor (For FileHandler/deserialization)
+    // Default constructor
     public Product() {
     }
 
-    // --- Getter Methods ---
+    // Getters
     public String getProductID() {
         return productID;
     }
@@ -41,7 +41,7 @@ public class Product {
         return stockQuantity;
     }
 
-    // --- Setter Methods ---
+    // Setters
     public void setProductID(String productID) {
         this.productID = productID;
     }
@@ -60,6 +60,15 @@ public class Product {
 
     public void setStockQuantity(int stockQuantity) {
         this.stockQuantity = stockQuantity;
+    }
+
+    // Business logic
+    public boolean reduceStock(int quantity) {
+        if (quantity <= stockQuantity) {
+            stockQuantity -= quantity;
+            return true;
+        }
+        return false;
     }
 
     @Override
