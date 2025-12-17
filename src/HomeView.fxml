@@ -2,18 +2,25 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="TOP_RIGHT" prefHeight="54.0" prefWidth="1200.0" spacing="40.0">
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
+      <HBox alignment="TOP_RIGHT" prefHeight="60.0" prefWidth="50.0" spacing="40.0" style="-fx-background-color: #F5F5F5;">
          <children>
+            <Label prefHeight="20.0" prefWidth="270.0" text="RETRORACK" textFill="#8e7e6c">
+               <font>
+                  <Font name="Urdu Typesetting Bold" size="44.0" />
+               </font>
+            </Label>
+            <Region prefWidth="195.0" HBox.hgrow="ALWAYS" />
             <Hyperlink text="WOMAN" textFill="#330a0a">
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -30,6 +37,34 @@
                </font>
             </Hyperlink>
          </children>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
       </HBox>
+      <StackPane prefHeight="142.0" prefWidth="864.0" style="-fx-background-color: #BCA38A;">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="665.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/background%20image.jpeg" />
+               </image>
+            </ImageView>
+            <Label alignment="TOP_CENTER" text="DISCOVER UNIQUE PRE-LOVED FASHION" textFill="#f7eded">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets bottom="300.0" />
+               </StackPane.margin>
+            </Label>
+            <Label text="Sustainable thrift shopping made simple &amp; stylish" textFill="#fcfafa">
+               <font>
+                  <Font name="Times New Roman" size="31.0" />
+               </font>
+               <padding>
+                  <Insets top="300.0" />
+               </padding>
+            </Label>
+         </children>
+      </StackPane>
    </children>
 </VBox>
