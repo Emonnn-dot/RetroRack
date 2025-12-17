@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="767.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="TOP_RIGHT" prefHeight="60.0" prefWidth="50.0" spacing="40.0" style="-fx-background-color: #F5F5F5;">
+      <HBox alignment="TOP_RIGHT" prefHeight="60.0" prefWidth="50.0" spacing="10.0" style="-fx-background-color: #F5F5F5;">
          <children>
             <Label prefHeight="20.0" prefWidth="270.0" text="RETRORACK" textFill="#8e7e6c">
                <font>
@@ -21,21 +22,42 @@
                </font>
             </Label>
             <Region prefWidth="195.0" HBox.hgrow="ALWAYS" />
-            <Hyperlink text="WOMAN" textFill="#330a0a">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink text="MEN" textFill="#0b0202">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink text="ACCOUNT" textFill="#100202">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Hyperlink>
+            <ImageView fx:id="iconSearch" fitHeight="28.0" fitWidth="27.0" onMouseClicked="#handleSearch" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: #F5F5F5;">
+               <image>
+                  <Image url="@Images/search%20icon%20new.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <StackPane alignment="TOP_CENTER" prefHeight="47.0" prefWidth="33.0">
+               <children>
+                  <ImageView fx:id="imgCart" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/cart%20new.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label fx:id="lblCartCount" onMouseClicked="#handleCart" text="1" textFill="#e12315" translateX="5.0" translateY="-5.0" StackPane.alignment="TOP_RIGHT">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </StackPane>
+            <ImageView fx:id="btnUser" fitHeight="28.0" fitWidth="27.0" onMouseClicked="#handleUser" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/user%20icon.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </ImageView>
          </children>
          <padding>
             <Insets left="50.0" />
@@ -64,7 +86,118 @@
                   <Insets top="300.0" />
                </padding>
             </Label>
+            <Button fx:id="btnShopNow" mnemonicParsing="false" onAction="#handleShopNow" style="-fx-background-color: #330a0a;" text="SHOP NOW" textFill="WHITE">
+               <StackPane.margin>
+                  <Insets top="370.0" />
+               </StackPane.margin>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
          </children>
       </StackPane>
+      <Label prefHeight="29.0" prefWidth="154.0" style="-fx-background-color: #f7eded;" text="NEW ARRIVALS" textFill="#8e7e6c">
+         <font>
+            <Font name="Urdu Typesetting" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets top="5.0" />
+         </opaqueInsets>
+      </Label>
+      <HBox prefHeight="254.0" prefWidth="864.0" style="-fx-background-color: #E5E4E2;">
+         <children>
+            <VBox prefHeight="176.0" prefWidth="216.0">
+               <children>
+                  <ImageView fitHeight="188.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/dress.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label style="-fx-background-color: #e4e4e4;" text="FLORAL DRESS" textFill="#86705a">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </Label>
+                  <Label text="RM 49">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="176.0" prefWidth="216.0">
+               <children>
+                  <ImageView fitHeight="188.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/handbag.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label style="-fx-background-color: #e4e4e4;" text="BOW HANDBAG" textFill="#86705a">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </Label>
+                  <Label text="RM 35">
+                     <padding>
+                        <Insets left="50.0" right="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="176.0" prefWidth="216.0">
+               <children>
+                  <ImageView fitHeight="188.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/men%20blouse.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label style="-fx-background-color: #e4e4e4;" text="BLOUSE WHITE" textFill="#86705a">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </Label>
+                  <Label text="RM 39">
+                     <padding>
+                        <Insets left="50.0" right="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="176.0" prefWidth="216.0">
+               <children>
+                  <ImageView fitHeight="188.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/trouser.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label style="-fx-background-color: #e4e4e4;" text="SAND TROUSERS" textFill="#86705a">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" right="30.0" />
+                     </padding>
+                  </Label>
+                  <Label text="RM 25">
+                     <padding>
+                        <Insets left="50.0" right="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </children>
 </VBox>
