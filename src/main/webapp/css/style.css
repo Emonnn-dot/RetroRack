@@ -1,0 +1,105 @@
+
+:root {
+    --primary-color: #D2B48C;      /* Soft Brown */
+    --text-color: #5D4037;       /* Dark Brown */
+    --background-color: #FFF8E1; /* Cream */
+    --header-color: #7a6763;     /* Deep Brown */
+    --accent-color: #BC8F8F;     /* Rosy Brown */
+}
+
+/* 2. BASIC SETUP */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 3. HEADER */
+header {
+    background-color: var(--header-color);
+    color: #F5F5F5;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    letter-spacing: 2px;
+}
+
+/* 4. NAVIGATION */
+nav {
+    background-color: var(--text-color);
+    text-align: center;
+    padding: 15px 0;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #FFF8E1;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* 5. HERO SECTION (Welcome Box) */
+.hero {
+    text-align: center;
+    padding: 80px 40px;
+    background-color: var(--primary-color);
+    margin: 50px auto;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border: 3px solid var(--accent-color);
+}
+
+.hero h2 {
+    font-size: 2.8em;
+    margin-top: 0;
+}
+
+.hero h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* 6. BUTTON */
+button {
+    background-color: var(--header-color);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px); 
+}
+
+/* 7. FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--header-color);
+    color: white;
+    margin-top: 50px;
+}
