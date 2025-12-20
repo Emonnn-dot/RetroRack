@@ -159,3 +159,23 @@ footer {
     color: white;
     margin-top: 50px;
 } 
+
+/* 8. LOGIN PAGE STYLING */
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: inline-block; 
+    min-width: 300px;
+    border: 1px solid #ddd;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+} 
