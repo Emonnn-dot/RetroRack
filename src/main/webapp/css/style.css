@@ -58,6 +58,21 @@ nav a:hover {
     color: var(--primary-color);
 }
 
+nav a[href="login.html"] {
+    float: right;
+    background-color: var(--header-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-right: 20px;
+    border: 1px solid var(--primary-color);
+    margin-top: -5px; 
+}
+
+nav a[href="login.html"]:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
 /* 5. HERO SECTION (Welcome Box) */
 .hero {
     text-align: center;
