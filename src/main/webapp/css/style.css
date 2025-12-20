@@ -1,9 +1,9 @@
 
 :root {
-    --primary-color: #D2B48C;      /* Soft Brown */
+    --primary-color: #d4bfb2;      /* Soft Brown */
     --text-color: #5D4037;       /* Dark Brown */
     --background-color: #FFF8E1; /* Cream */
-    --header-color: #7a6763;     /* Deep Brown */
+    --header-color: #b2a09d;     /* Deep Brown */
     --accent-color: #BC8F8F;     /* Rosy Brown */
 }
 
@@ -57,13 +57,15 @@ nav a:hover {
 /* 5. HERO SECTION (Welcome Box) */
 .hero {
     text-align: center;
-    padding: 80px 40px;
-    background-color: var(--primary-color);
-    margin: 50px auto;
-    max-width: 900px;
+    padding: 100px 20px;
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url('../Images/hero-bg.jpeg');
+    
+    background-size: cover;
+    background-position: center;
+    color: white; 
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    border: 3px solid var(--accent-color);
 }
 
 .hero h2 {
