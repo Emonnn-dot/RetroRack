@@ -26,11 +26,15 @@ header {
 }
 
 header h1 {
-    margin: 0;
-    font-size: 3em;
-    letter-spacing: 2px;
+    font-size: 80px;      
+    margin-bottom: 10px;  
 }
 
+
+header p {
+    font-size: 24px;      
+    font-weight: normal;  
+}
 /* 4. NAVIGATION */
 nav {
     background-color: var(--text-color);
