@@ -22,40 +22,40 @@
                 <img src="Images/dress.jpg" alt="Floral Dress" style="width:50%; border-radius:10px;">
                 <h3>Floral Dress</h3>
                 <p>RM 45.00</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Floral Dress')">Add to Cart</button>
             </div>
             <div class="product-card">
                <img src="Images/BrownTShirt.jpg" alt="Brown Shirt" style="width:50%; border-radius:10px;">
                <h3>90s Brown T-Shirt</h3>
                <p>RM 40.00</p>
-               <button class="add-to-cart">Add to Cart</button>
+               <button class="add-to-cart" onclick="addToCart('90s Brown T-Shirt')">Add to Cart</button>
             </div>
             <div class="product-card">
                <img src="Images/Vintage-Jacket.jpg" alt="Vintage Jacket" style="width:50%; border-radius:10px;">
                <h3>Vintage Brown Jacket</h3>
                <p>RM 50.00</p>
-               <button class="add-to-cart">Add to Cart</button>
+               <button class="add-to-cart" onclick="addToCart('Vintage Brown Jacket')">Add to Cart</button>
             </div>
             </div>
             <div class="product-card">
                <img src="Images/Grey-Palazzo.jpg" alt="Grey Palazzo" style="width:50%; border-radius:10px;">
                <h3>Grey Palazzo</h3>
                <p>RM 30.00</p>
-               <button class="add-to-cart">Add to Cart</button>
+               <button class="add-to-cart" onclick="addToCart('Grey Palazzo')">Add to Cart</button>
             </div>
             </div>
             <div class="product-card">
                <img src="Images/Men-Polo-Shirt.jpg" alt="Polo Shirt" style="width:50%; border-radius:10px;">
                <h3>Men Polo Shirt</h3>
                <p>RM 45.00</p>
-               <button class="add-to-cart">Add to Cart</button>
+               <button class="add-to-cart" onclick="addToCart('Men Polo Shirt')">Add to Cart</button>
             </div>
             </div>
             <div class="product-card">
                <img src="Images/Woman-Skirt.jpg" alt="Woman Skirt" style="width:50%; border-radius:10px;">
-               <h3>Woman's Elegant Skirt</h3>
+               <h3>Woman Elegant Skirt</h3>
                <p>RM 37.00</p>
-               <button class="add-to-cart">Add to Cart</button>
+               <button class="add-to-cart" onclick="addToCart('Woman Elegant Skirt')">Add to Cart</button>
             </div>
         </div>
     </main>
@@ -63,5 +63,10 @@
     <footer>
         <p>&copy; 2025 RetroRack Team</p>
     </footer>
+    <script>
+    function addToCart(itemName) {
+    alert(itemName + " added to cart!");
+}
+    </script>
 </body>
 </html> 
