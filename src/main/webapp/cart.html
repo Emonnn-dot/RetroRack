@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RetroRack - Your Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="login.html" class="account-btn">Account</a>
+    </nav>
+
+    <main style="padding: 40px;">
+        <h2 style="text-align: center;">Your Shopping Cart</h2>
+        <div class="divider"></div>
+
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <thead>
+                <tr style="background-color: #f2f2f2; text-align: left;">
+                    <th style="padding: 15px; border-bottom: 2px solid #ddd;">Product</th>
+                    <th style="padding: 15px; border-bottom: 2px solid #ddd;">Price</th>
+                    <th style="padding: 15px; border-bottom: 2px solid #ddd;">Quantity</th>
+                    <th style="padding: 15px; border-bottom: 2px solid #ddd;">Subtotal</th>
+                    <th style="padding: 15px; border-bottom: 2px solid #ddd;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd;">Floral Dress (M)</td>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd;">RM 45.00</td>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd;">1</td>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd;">RM 45.00</td>
+                <td style="padding: 15px; border-bottom: 1px solid #ddd;">
+                    <button onclick="removeItem(this)" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                        Remove
+                    </button>
+                </td>
+               </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" style="padding: 20px; text-align: right; font-weight: bold;">Total Amount:</td>
+                    <td style="padding: 20px; font-weight: bold; color: #e67e22;">RM 45.00</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="products.html" class="btn-secondary" style="margin-right: 10px; text-decoration: none; color: #555;">Continue Shopping</a>
+            <button class="add-to-cart" style="background-color: #27ae60;">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RetroRack Team</p>
+    </footer>
+    <script>
+    function removeItem(button) {
+    alert("Item will be removed from your cart!");
+    var row = button.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+}
+</script>
+</body>
+</html>
