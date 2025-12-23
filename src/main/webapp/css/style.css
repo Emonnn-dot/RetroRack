@@ -163,19 +163,63 @@ footer {
 /* 8. LOGIN PAGE STYLING */
 .login-container {
     background-color: white;
-    padding: 30px;
+    padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
     display: inline-block; 
-    min-width: 300px;
-    border: 1px solid #ddd;
+    min-width: 350px;
+    border: 1px solid var(--primary-color); 
+    margin-top: 50px;
+}
+
+.login-container h2 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+
+.login-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: var(--text-color);
 }
 
 .login-container input {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
     box-sizing: border-box; 
-} 
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+
+.login-container input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+
+.login-container .add-to-cart {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-container p a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-container p a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}

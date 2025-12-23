@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>RetroRack - Login</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="css/style.css"> </head>
 <body>
     <nav>
         <a href="index.html">Home</a>
@@ -14,14 +14,15 @@
     <main style="padding: 50px; text-align: center;">
         <div class="login-container">
             <h2>User Login</h2>
-            <div class="divider"></div> <form id="loginForm" novalidate>
-                <div style="margin-bottom: 15px;">
-                    <label>Username:</label><br>
+            <div class="divider"></div> 
+           <form id="loginForm" novalidate>
+                <div class="login-group" style="text-align: left; margin-bottom: 15px;">
+                    <label>Username:</label>
                     <input type="text" id="username" name="username" required>
                 </div>
                 
-                <div style="margin-bottom: 15px;">
-                    <label>Password:</label><br>
+                <div class="login-group" style="text-align: left; margin-bottom: 15px;">
+                    <label>Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 
@@ -60,4 +61,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
