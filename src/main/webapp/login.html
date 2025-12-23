@@ -56,8 +56,10 @@
                 event.preventDefault();
                 return;
             }
-
-            alert("Form validation successful! Submitting data to server...");
+            event.preventDefault();
+            alert("Form validation successful! Redirecting to home...");
+            window.location.assign("index.html");
+        
         });
     </script>
 </body>

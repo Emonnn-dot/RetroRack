@@ -27,7 +27,7 @@
             <h3>Discover Unique Pre-Loved Fashion</h3>
             <p>Sustainable thrift shopping made simple & stylish</p>
             
-            <button onclick="showMessage()">Shop Now</button>
+           <button onclick="goToProducts()">Shop Now</button>
         </section>
         <section class="about">
     <div class="about-content">
@@ -55,9 +55,12 @@
 </footer>
 
     <script>
-        function showMessage() {
-            alert("Welcome to RetroRack! Product page coming soon.");
-        }
+    function goToProducts() {
+      
+        alert("Welcome to RetroRack! Exploring our collections...");
+        
+        window.location.assign("products.html"); 
+    }
     </script>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>RetroRack - Register</title>
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav>
@@ -86,8 +86,10 @@
                 event.preventDefault();
                 return;
             }
+            event.preventDefault();
 
             alert("Registration successful! Redirecting to login page...");
+            window.location.href = "login.html";
         });
     </script>
 </body>
