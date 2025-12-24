@@ -20,8 +20,8 @@
             
             <form id="registerForm" novalidate>
                 <div class="login-group">
-                    <label>Full Name:</label>
-                    <input type="text" id="fullname" name="fullname">
+                    <label>Username:</label>
+                    <input type="text" id="Username" name="Username">
                 </div>
 
                 <div class="login-group">
@@ -54,7 +54,7 @@
         const registerForm = document.getElementById('registerForm');
 
         registerForm.addEventListener('submit', function(event) {
-            const name = document.getElementById('fullname').value.trim();
+            const name = document.getElementById('Username').value.trim();
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('regPassword').value.trim();
             const confirmPass = document.getElementById('confirmPassword').value.trim();
