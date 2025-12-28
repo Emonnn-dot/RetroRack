@@ -3,7 +3,7 @@ import java.util.ArrayList; // class to make resizeable array
 public class Shop
 {
     // Array to hold items
-    private final ArrayList<Item> inventory;
+    private final ArrayList<Item> inventory; // make array based on Item datatype
 
     // Constructor
     public Shop()
