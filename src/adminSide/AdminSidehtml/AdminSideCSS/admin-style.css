@@ -1,0 +1,24 @@
+/* --- 1. THEME VARIABLES (VINTAGE PINK) --- */
+:root {
+    --primary-rose: #F8D7DA;    /* Pastel pink for borders */
+    --text-dark: #5D4037;      /* Earthy brown for typography */
+    --bg-cream: #FFF5F5;       /* Main background color */
+    --white: #ffffff;
+    --rose-muted: #D1A3A3;     /* Active and hover background */
+    --accent: #E8A2A2;         /* Accent pink color */
+    --danger: #C62828;         /* Professional red for error states */
+    --shadow: 8px 8px 0px #F8D7DA; /* Signature retro-style shadow */
+}
+
+/* --- 2. DARK MODE THEME (SYNCHRONIZED) --- */
+body.dark-theme {
+    --bg-cream: #2D2424;       /* Dark chocolate background */
+    --text-dark: #F8D7DA;      /* Light pink text color */
+    --white: #3D3333;          /* Dark brown cards and sidebar */
+    --primary-rose: #5D4037;   /* Muted dark borders */
+    --shadow: 8px 8px 0px #1a1515; /* Deep solid shadow */
+    --rose-muted: #E8A2A2;
+}
+
+/* --- 3. GLOBAL SETUP --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
