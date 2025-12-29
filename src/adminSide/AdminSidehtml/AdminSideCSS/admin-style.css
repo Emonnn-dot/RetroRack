@@ -22,3 +22,33 @@ body.dark-theme {
 
 /* --- 3. GLOBAL SETUP --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- 4. NAVIGATION / NAVBAR --- */
+.navbar {
+    padding: 20px 40px;
+    background: var(--white);
+    border-bottom: 2.5px solid var(--primary-rose);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-logo {
+    width: 120px;
+    filter: sepia(0.2) hue-rotate(320deg);
+}
