@@ -82,3 +82,42 @@ body {
     font-weight: 700;
     margin-bottom: 10px;
 }
+
+.auth-header p {
+    font-size: 13px;
+    color: #888;
+}
+
+/* --- 6. FORM AND INPUT POSITIONING --- */
+.auth-form.hidden { 
+    display: none !important; /* Ensures the registration form is not displayed simultaneously */
+}
+
+.input-group {
+    margin-bottom: 22px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.main-icon {
+    position: absolute;
+    left: 15px;
+    color: var(--rose-muted);
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 2;
+}
