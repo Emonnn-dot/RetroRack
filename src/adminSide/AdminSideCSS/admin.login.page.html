@@ -40,3 +40,70 @@
     <h1 id="authTitle">Admin Access</h1>
     <p id="authSubtitle">Please enter your credentials to manage your store.</p>
 </div>
+
+<!-- Login form for existing administrators -->
+<form id="loginForm" class="auth-form" novalidate>
+    <div class="input-group">
+        <label>Email Address</label>
+        <div class="field-wrapper">
+            <i class='bx bx-envelope main-icon'></i>
+            <input type="email" id="loginEmail" placeholder="admin@retrorack.com" required>
+        </div>
+        <small class="error-text" id="loginEmailError"></small>
+    </div>
+
+    <div class="input-group">
+        <label>Password</label>
+        <div class="field-wrapper">
+            <i class='bx bx-lock-alt main-icon'></i>
+            <input type="password" id="loginPass" placeholder="••••••••" required>
+            <button type="button" class="password-toggle-btn" id="toggleBtnLogin">
+                <i class='bx bx-hide' id="toggleIconLogin"></i>
+            </button>
+        </div>
+        <small class="error-text" id="loginPassError"></small>
+    </div>
+
+    <button type="submit" class="btn-submit" id="loginBtn">
+        <span class="btn-label">Sign In</span>
+        <div class="loader" id="loginLoader"></div>
+    </button>
+
+    <div class="auth-switch">
+        <span>New administrator? <a href="#" onclick="toggleAuth(true)">Sign Up Now</a></span>
+    </div>
+</form>
+
+<!-- Registration form for new administrators -->
+<form id="signupForm" class="auth-form hidden" novalidate>
+    <div class="input-group">
+        <label>Official Email</label>
+        <div class="field-wrapper">
+            <i class='bx bx-envelope main-icon'></i>
+            <input type="email" id="regEmail" placeholder="name@domain.com" required>
+        </div>
+        <small class="error-text" id="regEmailError"></small>
+    </div>
+
+    <div class="input-group">
+        <label>New Password</label>
+        <div class="field-wrapper">
+            <i class='bx bx-lock-alt main-icon'></i>
+            <input type="password" id="regPass" placeholder="Minimum 8 characters" required>
+        </div>
+        <ul class="password-rules">
+            <li class="rule" id="length"><i class='bx bx-circle'></i> Minimum 8 characters</li>
+            <li class="rule" id="upper"><i class='bx bx-circle'></i> Uppercase & lowercase letters</li>
+            <li class="rule" id="number"><i class='bx bx-circle'></i> Number & symbol</li>
+        </ul>
+        <small class="error-text" id="regPassError"></small>
+    </div>
+
+    <button type="submit" class="btn-submit" id="regBtn" disabled>
+        Register Account
+    </button>
+
+    <div class="auth-switch">
+        <span>Already have an account? <a href="#" onclick="toggleAuth(false)">Login</a></span>
+    </div>
+</form>
