@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Rack | Admin Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional CSS styles for validation indicators and error messages */
+        .error-text { color: var(--danger); font-size: 11px; margin-top: 5px; display: block; min-height: 15px; }
+        .password-rules { list-style: none; padding: 0; margin: 10px 0; font-size: 11px; }
+        .rule { color: #888; display: flex; align-items: center; gap: 5px; transition: 0.3s; }
+        .rule i { font-size: 14px; }
+        .rule.valid { color: #2E7D32; }
+        .btn-submit:disabled { background-color: #ccc !important; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+        .loader { display: none; width: 18px; height: 18px; border: 2px solid #ffffff; border-top: 2px solid transparent; border-radius: 50%; animation: spin 0.8s linear infinite; margin-left: 10px; }
+        @keyframes spin { 
+            0% { transform: rotate(0deg); } 
+            100% { transform: rotate(360deg); } 
+        }
+    </style>
+</head>
+<body class="light-theme"> 
