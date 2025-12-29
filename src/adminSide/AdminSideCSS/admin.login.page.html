@@ -107,3 +107,82 @@
         <span>Already have an account? <a href="#" onclick="toggleAuth(false)">Login</a></span>
     </div>
 </form>
+
+</div>
+</div>
+
+<script>
+/* --- 1. THEME INITIALIZATION AND SESSION CHECK --- */
+const body = document.body;
+
+// Apply the saved theme preference from local storage
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-theme');
+}
+
+/* --- 2. LOGIN PROCESSING LOGIC --- */
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+    const password = document.getElementById('loginPass').value;
+    const emailError = document.getElementById('loginEmailError');
+    const passError = document.getElementById('loginPassError');
+    const loader = document.getElementById('loginLoader');
+
+    // Clear any previous error messages
+    emailError.innerText = "";
+    passError.innerText = "";
+
+    // Retrieve stored administrator credentials
+    const storedEmail = localStorage.getItem('adminEmail');
+    const storedPass = localStorage.getItem('adminPass');
+
+    if (email === storedEmail && password === storedPass) {
+        loader.style.display = "inline-block";
+        document.getElementById('loginBtn').disabled = true;
+
+        // Save login state
+        localStorage.setItem('isLoggedIn', 'true');
+
+        setTimeout(() => {
+            window.location.href = 'dashboard.html';
+        }, 1000);
+    } else {
+        passError.innerText = "Incorrect email or password.";
+    }
+});
+
+/* --- 3. SIGN-UP VALIDATION LOGIC (STRICT RULES) --- */
+const regEmail = document.getElementById('regEmail');
+const regPass = document.getElementById('regPass');
+const regBtn = document.getElementById('regBtn');
+
+// Regular expressions for input validation
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const passRegex  = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/;
+
+// Validate sign-up inputs in real time
+function validateSignup() {
+    const isEmailValid = emailRegex.test(regEmail.value);
+    const isPassValid = passRegex.test(regPass.value);
+
+    updateRuleUI('length', regPass.value.length >= 8);
+    updateRuleUI('upper', /[A-Z]/.test(regPass.value) && /[a-z]/.test(regPass.value));
+    updateRuleUI('number', /\d/.test(regPass.value) && /[^\w\s]/.test(regPass.value));
+
+    regBtn.disabled = !(isEmailValid && isPassValid);
+}
+
+// Update the password requirement indicators
+function updateRuleUI(id, isValid) {
+    const element = document.getElementById(id);
+    element.classList.toggle('valid', isValid);
+    element.querySelector('i').className =
+        isValid ? 'bx bxs-check-circle' : 'bx bx-circle';
+}
+
+// Trigger validation when user types
+regEmail.addEventListener('input', validateSignup);
+regPass.addEventListener('input', validateSignup);
+
