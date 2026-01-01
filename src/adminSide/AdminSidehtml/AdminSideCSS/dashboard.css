@@ -112,3 +112,57 @@ body {
     color: var(--danger); /* Change to red on hover */
     transform: scale(1.1);
 }
+
+/* --- 4. MAIN CONTENT AREA --- */
+.main-content {
+    margin-left: 230px;
+    padding: 30px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.content-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-color);
+    border-left: 5px solid var(--accent-color);
+    padding-left: 15px;
+}
+
+/* --- 5. DASHBOARD STATISTICS --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card { 
+    background: var(--white);
+    padding: 20px; 
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 4px 4px 0px var(--primary-color); /* Retro-style shadow effect */
+}
+
+.stat-label {
+    font-size: 11px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    display: block;
+    margin-top: 5px;
+    color: var(--text-color);
+}
