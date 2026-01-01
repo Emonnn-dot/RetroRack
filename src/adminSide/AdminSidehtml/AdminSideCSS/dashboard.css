@@ -26,3 +26,89 @@ body {
     overflow: hidden; 
     font-size: 13px; 
 }
+
+/* --- 3. SIDEBAR NAVIGATION --- */
+.sidebar {
+    width: 230px;
+    position: fixed;
+    height: 100vh;
+    background: var(--white); 
+    border-right: 1px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    z-index: 100;
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-small {
+    width: 100px;
+    filter: sepia(0.2) hue-rotate(320deg) brightness(0.9); /* Vintage pink visual filter */
+}
+
+.nav-menu {
+    list-style: none;
+    flex-grow: 1;
+    padding: 0 15px;
+}
+
+.nav-item {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+
+.nav-item a { 
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.2s;
+    border-radius: 8px;
+}
+
+.nav-item.active a, 
+.nav-item:hover a { 
+    background: var(--header-color); 
+    color: var(--white); 
+}
+
+.nav-item i {
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+/* --- UPDATED SIDEBAR FOOTER --- */
+.sidebar-footer {
+    padding: 8px;
+    text-align: center;
+    border-top: 1px solid var(--primary-color);
+    display: flex;
+    justify-content: left; 
+    align-items: center;
+}
+
+.sidebar-footer a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-footer i {
+    font-size: 20px; /* Medium-sized icon */
+    color: var(--header-color);
+    transition: 0.3s;
+}
+
+.sidebar-footer i:hover {
+    color: var(--danger); /* Change to red on hover */
+    transform: scale(1.1);
+}
