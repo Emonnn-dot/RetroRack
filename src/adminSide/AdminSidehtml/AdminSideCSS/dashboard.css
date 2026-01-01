@@ -166,3 +166,93 @@ body {
     margin-top: 5px;
     color: var(--text-color);
 }
+
+/* --- 6. TABLE STYLING --- */
+.table-container { 
+    background: var(--white); 
+    border: 1px solid var(--primary-color); 
+    border-radius: 10px;
+    padding: 20px; 
+}
+
+.table-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search-box {
+    position: relative;
+    width: 250px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    color: var(--header-color);
+}
+
+.search-box input { 
+    width: 100%;
+    padding: 8px 8px 8px 32px; 
+    border: 1px solid var(--primary-color);
+    border-radius: 6px; 
+    outline: none;
+    font-size: 12px;
+    background: var(--background-color);
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--text-color);
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.product-table td {
+    padding: 12px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--background-color);
+}
+
+/* Status badges */
+.badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge.available { background: #E8F5E9; color: #2E7D32; }
+.badge.soldout { background: #FFEBEE; color: #C62828; }
+
+/* Edit and delete action buttons */
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px; 
+    color: var(--header-color);
+    margin-right: 10px;
+    transition: 0.2s;
+    vertical-align: middle;
+}
+
+.action-btn:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.action-btn.delete {
+    color: var(--danger); /* Red color for delete icon */
+}
