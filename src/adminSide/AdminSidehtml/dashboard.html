@@ -55,3 +55,61 @@
                 </div>
             </div>
         </div>
+
+                <!-- PRODUCT MANAGEMENT SECTION -->
+        <div id="products-section" class="section" style="display:none;">
+            <header class="content-header">
+                <h1>Product Management</h1>
+                <button class="btn-add" onclick="openModal()">+ Add Product</button>
+            </header>
+
+            <section class="table-container">
+                <div class="table-actions">
+                    <span>Products List</span>
+                    <div class="search-box">
+                        <i class='bx bx-search'></i>
+                        <input type="text" id="productSearch" onkeyup="filterTable()" placeholder="Search item name...">
+                    </div>
+                </div>
+
+                <table class="product-table" id="productTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-list-body">
+                        <!-- Product rows are dynamically injected here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- CUSTOMER INFORMATION SECTION -->
+        <div id="customers-section" class="section" style="display:none;">
+            <header class="content-header">
+                <h1>Customer Directory</h1>
+            </header>
+            <section class="table-container">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Order</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>#C001</td><td>Adam Haris</td><td>012-3456789</td><td>Kuala Lumpur, MY</td><td>Vintage Tee (x2)</td></tr>
+                        <tr><td>#C002</td><td>Siti Nur</td><td>019-9876543</td><td>Penang, MY</td><td>Retro Cargo (x1)</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
