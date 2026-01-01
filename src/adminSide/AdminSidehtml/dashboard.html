@@ -192,3 +192,128 @@
             </form>
         </div>
     </div>
+
+        <script>
+        // Product data storage using browser localStorage
+        let products = JSON.parse(localStorage.getItem('retroProducts')) || [
+            {name: "Vintage Tee", category: "Apparel", price: "89.00", stock: "24", status: "Available"},
+            {name: "Retro Cargo", category: "Pants", price: "129.00", stock: "0", status: "Sold Out"}
+        ];
+
+        // Display the selected dashboard section
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+            document.getElementById(sectionId + '-section').style.display = 'block';
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            if (sectionId === 'dashboard') updateDashboardStats();
+        }
+
+        // Render product table rows dynamically
+        function renderTable() {
+            const body = document.getElementById('product-list-body');
+            body.innerHTML = "";
+            products.forEach((p, index) => {
+                body.innerHTML += `
+                    <tr>
+                        <td>${p.name}</td>
+                        <td>${p.category}</td>
+                        <td>RM ${p.price}</td>
+                        <td>${p.stock}</td>
+                        <td><span class="badge ${p.status.replace(" ","").toLowerCase()}">${p.status}</span></td>
+                        <td>
+                            <button class="action-btn" onclick="editProduct(${index})"><i class='bx bx-edit-alt'></i></button>
+                            <button class="action-btn delete" onclick="deleteProduct(${index})"><i class='bx bx-trash'></i></button>
+                        </td>
+                    </tr>
+                `;
+            });
+            localStorage.setItem('retroProducts', JSON.stringify(products));
+            updateDashboardStats();
+        }
+
+        // Open the product modal dialog
+        function openModal() {
+            document.getElementById('productModal').style.display = 'flex';
+        }
+
+        // Close the product modal and reset the form
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+            document.getElementById('productForm').reset();
+            document.getElementById('editIndex').value = "";
+            document.getElementById('modalTitle').innerText = "Add Product";
+        }
+
+        // Handle product form submission
+        document.getElementById('productForm').onsubmit = function(e) {
+            e.preventDefault();
+            const index = document.getElementById('editIndex').value;
+            const data = {
+                name: document.getElementById('pName').value,
+                category: document.getElementById('pCategory').value,
+                price: parseFloat(document.getElementById('pPrice').value).toFixed(2),
+                stock: document.getElementById('pStock').value,
+                status: document.getElementById('pStatus').value
+            };
+
+            if (index === "") products.push(data);
+            else products[index] = data;
+
+            renderTable();
+            closeModal();
+        };
+
+        // Populate the modal with existing product data for editing
+        function editProduct(index) {
+            const p = products[index];
+            document.getElementById('editIndex').value = index;
+            document.getElementById('pName').value = p.name;
+            document.getElementById('pCategory').value = p.category;
+            document.getElementById('pPrice').value = p.price;
+            document.getElementById('pStock').value = p.stock;
+            document.getElementById('pStatus').value = p.status;
+            document.getElementById('modalTitle').innerText = "Edit Product";
+            openModal();
+        }
+
+        // Remove a product entry after confirmation
+        function deleteProduct(index) {
+            if (confirm("Confirm delete this item?")) {
+                products.splice(index, 1);
+                renderTable();
+            }
+        }
+
+        // Filter product table rows based on search input
+        function filterTable() {
+            const val = document.getElementById('productSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('#productTable tbody tr');
+            rows.forEach(row => {
+                row.style.display = row.innerText.toLowerCase().includes(val) ? "" : "none";
+            });
+        }
+
+        // Update dashboard summary statistics
+        function updateDashboardStats() {
+            document.getElementById('count-products').innerText = products.length;
+            document.getElementById('count-available').innerText =
+                products.filter(p => p.status === 'Available').length;
+            document.getElementById('count-soldout').innerText =
+                products.filter(p => p.status === 'Sold Out').length;
+        }
+
+        // Initial page load actions
+        window.onload = () => {
+            renderTable();
+            updateDashboardStats();
+        };
+
+        // Clear login session and redirect to login page
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'admin.login.page.html';
+        }
+    </script>
+</body>
+</html>
