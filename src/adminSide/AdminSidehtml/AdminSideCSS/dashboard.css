@@ -1,0 +1,28 @@
+/* --- 1. THEME VARIABLES (VINTAGE PINK) --- */
+:root {
+    --primary-color: #F8D7DA;      /* Pastel pink for borders and cards */
+    --text-color: #5D4037;        /* Deep brown for typography */
+    --background-color: #FFF5F5;  /* Blush cream background color */
+    --header-color: #D1A3A3;      /* Muted rose for headers and active menu */
+    --accent-color: #E8A2A2;      /* Vintage pink for icons and highlights */
+    --white: #ffffff;
+    --danger: #FF4D4D;            /* Red color for delete actions */
+}
+
+/* --- 2. GLOBAL STYLING --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    letter-spacing: 0.2px;
+}
+
+body { 
+    background-color: var(--background-color); 
+    color: var(--text-color); 
+    overflow: hidden; 
+    font-size: 13px; 
+}
