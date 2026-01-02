@@ -35,3 +35,79 @@ body {
     font-size: 13px;
     line-height: 1.6;
 }
+
+/* SIDEBAR LAYOUT AND LOGOUT AREA */
+.sidebar {
+    width: 230px; 
+    position: fixed; 
+    height: 100vh;
+    background: var(--white); 
+    border-right: 1px solid var(--primary-rose);
+    display: flex; 
+    flex-direction: column; 
+    padding: 20px 0; 
+    z-index: 100;
+}
+
+.admin-logo { 
+    width: 110px; 
+    margin: 0 auto 30px; 
+    filter: sepia(0.3) hue-rotate(320deg); 
+}
+
+.nav-menu { 
+    list-style: none; 
+    flex-grow: 1; 
+    padding: 0 15px; 
+}
+
+.nav-item { 
+    margin-bottom: 8px; 
+    cursor: pointer; 
+}
+
+.nav-item a { 
+    display: flex; 
+    align-items: center; 
+    padding: 12px 15px; 
+    color: var(--text-dark); 
+    text-decoration: none; 
+    border-radius: 8px; 
+    font-weight: 500; 
+}
+
+.nav-item.active a, 
+.nav-item:hover a { 
+    background: var(--rose-muted); 
+    color: var(--white); 
+}
+
+.nav-item i { 
+    font-size: 18px; 
+    margin-right: 12px; 
+}
+
+.sidebar-footer {
+    padding: 8px; 
+    text-align: center;
+    border-top: 1px solid var(--primary-rose);
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-footer a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-footer i {
+    font-size: 20px; /* Keeps icon size consistent */
+    color: var(--rose-muted); /* Same muted tone as header elements */
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-footer i:hover {
+    color: var(--danger); /* Turns red to clearly signal a destructive action */
+    transform: scale(1.1); /* Small hover feedback */
+}
