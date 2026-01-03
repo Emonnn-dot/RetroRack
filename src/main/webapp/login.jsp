@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="css/style.css"> </head>
 <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
+        <a href="index.jsp">Home</a>
+        <a href="products.jsp">Products</a>
         <a href="cart.html">Cart</a>
     </nav>
 

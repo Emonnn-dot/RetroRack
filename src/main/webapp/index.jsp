@@ -15,7 +15,7 @@
 
    <nav>
     <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
+    <a href="products.jsp">Products</a>
     <a href="cart.html">Cart</a>
     <a href="login.html" class="account-btn">Account</a>
    </nav>
