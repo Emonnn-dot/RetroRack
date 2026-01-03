@@ -1,0 +1,215 @@
+/* --- 1. THEME VARIABLES (VINTAGE PINK) --- */
+:root {
+    --primary-rose: #F8D7DA;    /* Pastel pink for borders */
+    --text-dark: #5D4037;      /* Earthy brown for typography */
+    --bg-cream: #FFF5F5;       /* Main background color */
+    --white: #ffffff;
+    --rose-muted: #D1A3A3;     /* Active and hover background */
+    --accent: #E8A2A2;         /* Accent pink color */
+    --danger: #C62828;         /* Professional red for error states */
+    --shadow: 8px 8px 0px #F8D7DA; /* Signature retro-style shadow */
+}
+
+/* --- 2. DARK MODE THEME (SYNCHRONIZED) --- */
+body.dark-theme {
+    --bg-cream: #2D2424;       /* Dark chocolate background */
+    --text-dark: #F8D7DA;      /* Light pink text color */
+    --white: #3D3333;          /* Dark brown cards and sidebar */
+    --primary-rose: #5D4037;   /* Muted dark borders */
+    --shadow: 8px 8px 0px #1a1515; /* Deep solid shadow */
+    --rose-muted: #E8A2A2;
+}
+
+/* --- 3. GLOBAL SETUP --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- 4. NAVIGATION / NAVBAR --- */
+.navbar {
+    padding: 20px 40px;
+    background: var(--white);
+    border-bottom: 2.5px solid var(--primary-rose);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-logo {
+    width: 120px;
+    filter: sepia(0.2) hue-rotate(320deg);
+}
+
+/* --- 5. AUTHENTICATION CONTAINER (CENTERED) --- */
+.auth-wrapper {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-container {
+    background: var(--white);
+    width: 100%;
+    max-width: 450px;
+    padding: 50px 40px;
+    border: 2px solid var(--text-dark);
+    border-radius: 4px;
+    box-shadow: var(--shadow); /* Neo-retro design style */
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.auth-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.auth-header p {
+    font-size: 13px;
+    color: #888;
+}
+
+/* --- 6. FORM AND INPUT POSITIONING --- */
+.auth-form.hidden { 
+    display: none !important; /* Ensures the registration form is not displayed simultaneously */
+}
+
+.input-group {
+    margin-bottom: 22px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.main-icon {
+    position: absolute;
+    left: 15px;
+    color: var(--rose-muted);
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.field-wrapper input {
+    width: 100%;
+    /* Adequate padding to prevent text overlap with icons */
+    padding: 14px 45px;
+    border: 2px solid #eee;
+    background: #fafafa;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Input styling adjustments for dark mode */
+body.dark-theme .field-wrapper input {
+    background-color: var(--bg-cream) !important;
+    color: var(--text-dark) !important;
+    border-color: var(--primary-rose) !important;
+}
+
+.field-wrapper input:focus {
+    border-color: var(--text-dark);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(209, 163, 163, 0.2);
+}
+
+/* Password visibility toggle button */
+.password-toggle-btn {
+    position: absolute;
+    right: 5px;
+    height: 100%;
+    width: 40px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--rose-muted);
+    z-index: 2;
+}
+
+/* --- 7. BUTTONS AND UTILITY STYLES --- */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--text-dark);
+    color: var(--white);
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: var(--rose-muted);
+    transform: translateY(-2px);
+}
+
+/* Theme icon animation for dark mode */
+body.dark-theme #themeIcon {
+    color: #FFD700 !important; /* Sun-yellow color in dark mode */
+    transform: rotate(360deg);
+}
+
+/* --- 8. ERROR MESSAGES AND USER FEEDBACK --- */
+.error-text {
+    color: var(--danger);
+    font-size: 11px;
+    margin-top: 6px;
+    height: 12px;
+    display: block;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.auth-switch a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
