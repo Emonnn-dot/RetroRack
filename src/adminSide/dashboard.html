@@ -39,11 +39,11 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-label">Total Products</span>
-                    <span class="stat-value" id="count-products">0</span>
+                    <span class="stat-value" id="count-products">6</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-label">Available Items</span>
-                    <span class="stat-value" id="count-available">0</span>
+                    <span class="stat-value" id="count-available">6</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-label">Sold Out</span>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="stat-card">
                     <span class="stat-label">Total Customers</span>
-                    <span class="stat-value">124</span>
+                    <span class="stat-value">4</span>
                 </div>
             </div>
         </div>
@@ -107,8 +107,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>#C001</td><td>Adam Haris</td><td>012-3456789</td><td>Kuala Lumpur, MY</td><td>Vintage Tee (x2)</td></tr>
-                        <tr><td>#C002</td><td>Siti Nur</td><td>019-9876543</td><td>Penang, MY</td><td>Retro Cargo (x1)</td></tr>
+                        <tr><td>#C001</td><td>Adam Haris</td><td>012-3456789</td><td>Kuala Lumpur, MY</td><td>Vintage Brown Jacket (x2)</td></tr>
+                        <tr><td>#C002</td><td>Siti Nur</td><td>019-9876543</td><td>Penang, MY</td><td>Woman Elegant Skirt (x1)</td></tr>
+                        <tr><td>#C003</td><td>Alia Aisyah</td><td>019-9365420</td><td>Penang, MY</td><td>Olive Drape Pants (x3)</td></tr>
+                        <tr><td>#C004</td><td>Adam Hazeer</td><td>011-5944819</td><td>Kelantan, MY</td><td>90s Brown T-Shirt (x1)</td></tr>
                     </tbody>
                 </table>
             </section>
@@ -196,8 +198,12 @@
         <script>
         // Product data storage using browser localStorage
         let products = JSON.parse(localStorage.getItem('retroProducts')) || [
-            {name: "Vintage Tee", category: "Apparel", price: "89.00", stock: "24", status: "Available"},
-            {name: "Retro Cargo", category: "Pants", price: "129.00", stock: "0", status: "Sold Out"}
+            {name: "Slim Woman Dress", category: "Dress", price: "45.00", stock: "24", status: "Available"},
+            {name: "90s Brown T-Shirt", category: "T-Shirt", price: "40.00", stock: "10", status: "Available"},
+            {name: "Vintage Brown Jacket", category: "Jacket", price: "50.00", stock: "23", status: "Available"},
+            {name: "Olive Drape Pants", category: "Pants", price: "39.00", stock: "30", status: "Available"},
+            {name: "Men Polo Shirt", category: "Shirt", price: "45.00", stock: "15", status: "Available"},
+            {name: "Woman Elegant Skirt", category: "Skirt", price: "37.00", stock: "21", status: "Available"}
         ];
 
         // Display the selected dashboard section
@@ -296,12 +302,15 @@
 
         // Update dashboard summary statistics
         function updateDashboardStats() {
-            document.getElementById('count-products').innerText = products.length;
-            document.getElementById('count-available').innerText =
-                products.filter(p => p.status === 'Available').length;
-            document.getElementById('count-soldout').innerText =
-                products.filter(p => p.status === 'Sold Out').length;
-        }
+            let products = JSON.parse(localStorage.getItem('retroProducts')) || [
+            {name: "Slim Woman Dress", category: "Dress", price: "45.00", stock: "24", status: "Available"},
+            {name: "90s Brown T-Shirt", category: "T-Shirt", price: "40.00", stock: "10", status: "Available"},
+            {name: "Vintage Brown Jacket", category: "Jacket", price: "50.00", stock: "23", status: "Available"},
+            {name: "Olive Drape Pants", category: "Pants", price: "39.00", stock: "30", status: "Available"},
+            {name: "Men Polo Shirt", category: "Shirt", price: "45.00", stock: "15", status: "Available"},
+            {name: "Woman Elegant Skirt", category: "Skirt", price: "37.00", stock: "21", status: "Available"}
+        ];
+    }
 
         // Initial page load actions
         window.onload = () => {
