@@ -21,20 +21,19 @@
         <table border="1" style="width:80%; margin: auto; border-collapse: collapse;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
-                    <th>Product ID</th>
+                    <th>Product Details</th>
                     <th>Quantity</th>
                     <th>Subtotal</th>
                 </tr>
             </thead>
             <tbody>
                 <%
-                    // Mengambil data Cart dari session (Hasil kerja Ahli 3)
                     Cart cart = (Cart) session.getAttribute("cart");
                     if (cart != null && !cart.getItems().isEmpty()) {
                         for (CartItem item : cart.getItems()) {
                 %>
                 <tr>
-                    <td><%= item.getProduct().getProductID() %></td>
+                    <td><%= item.getProduct().getProductID() %> : <%= item.getProduct().getName() %></td>
                     <td><%= item.getQuantity() %></td>
                     <td>RM <%= String.format("%.2f", item.getSubTotal()) %></td>
                 </tr>
