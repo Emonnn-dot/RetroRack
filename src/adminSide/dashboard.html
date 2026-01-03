@@ -302,15 +302,13 @@
 
         // Update dashboard summary statistics
         function updateDashboardStats() {
-            let products = JSON.parse(localStorage.getItem('retroProducts')) || [
-            {name: "Slim Woman Dress", category: "Dress", price: "45.00", stock: "24", status: "Available"},
-            {name: "90s Brown T-Shirt", category: "T-Shirt", price: "40.00", stock: "10", status: "Available"},
-            {name: "Vintage Brown Jacket", category: "Jacket", price: "50.00", stock: "23", status: "Available"},
-            {name: "Olive Drape Pants", category: "Pants", price: "39.00", stock: "30", status: "Available"},
-            {name: "Men Polo Shirt", category: "Shirt", price: "45.00", stock: "15", status: "Available"},
-            {name: "Woman Elegant Skirt", category: "Skirt", price: "37.00", stock: "21", status: "Available"}
-        ];
-    }
+            
+            document.getElementById('count-products').innerText = products.length;
+            document.getElementById('count-available').innerText = 
+            products.filter(p => p.status === 'Available').length;
+            document.getElementById('count-soldout').innerText = 
+            products.filter(p => p.status === 'Sold Out').length;
+        }
 
         // Initial page load actions
         window.onload = () => {
