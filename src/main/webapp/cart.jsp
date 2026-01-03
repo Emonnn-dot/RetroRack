@@ -54,7 +54,7 @@
             <h3>Total: RM <%= (cart != null) ? String.format("%.2f", cart.calculateTotal()) : "0.00" %></h3>
 
             <button onclick="window.location.href='products.jsp'" style="padding: 10px;">Continue Shopping</button>
-            <button style="padding: 10px; background-color: #28a745; color: white;">Checkout</button>
+            <button onclick="window.location.href='login.jsp'" style="padding: 10px; background-color: #28a745; color: white; cursor: pointer;">Checkout</button>
         </div>
     </main>
 

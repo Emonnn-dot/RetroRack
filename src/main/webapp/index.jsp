@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +15,10 @@
     </header>
 
    <nav>
-    <a href="index.html">Home</a>
+    <a href="index.jsp">Home</a>
     <a href="products.jsp">Products</a>
-    <a href="cart.html">Cart</a>
-    <a href="login.html" class="account-btn">Account</a>
+    <a href="cart.jsp">Cart</a>
+    <a href="login.jsp" class="account-btn">Account</a>
    </nav>
 
    <main>
@@ -59,7 +60,7 @@
       
         alert("Welcome to RetroRack! Exploring our collections...");
         
-        window.location.assign("products.html"); 
+        window.location.assign("products.jsp");
     }
     </script>
 

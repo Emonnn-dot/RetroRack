@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
     <nav>
         <a href="index.jsp">Home</a>
         <a href="products.jsp">Products</a>
-        <a href="cart.html">Cart</a>
+        <a href="cart.jsp">Cart</a>
     </nav>
 
     <main style="padding: 50px; text-align: center;">
@@ -29,7 +30,7 @@
                 <button type="submit" class="add-to-cart">Login</button>
             </form>
             
-            <p style="margin-top: 20px;">Don't have an account? <a href="register.html" style="color: var(--primary-color);">Register here</a></p>
+            <p style="margin-top: 20px;">Don't have an account? <a href="register.jsp" style="color: var(--primary-color);">Register here</a></p>
         </div>
     </main>
 
@@ -58,7 +59,7 @@
             }
             event.preventDefault();
             alert("Form validation successful! Redirecting to home...");
-            window.location.assign("index.html");
+            window.location.assign("index.jsp");
         
         });
     </script>
