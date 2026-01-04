@@ -223,3 +223,83 @@ footer {
     text-decoration: underline;
     color: var(--accent-color);
 }
+/* =========================================
+   9. PAYMENT PAGE STYLING 
+   ========================================= */
+.payment-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 60vh; 
+}
+
+.payment-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px; 
+    border: 1px solid var(--primary-color);
+    text-align: left;
+}
+
+.payment-container h2 {
+    color: var(--header-color);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.payment-group {
+    margin-bottom: 20px;
+}
+
+.payment-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+
+.payment-group input, 
+.payment-group textarea, 
+.payment-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.payment-group input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+.order-summary-box {
+    background-color: var(--background-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px dashed var(--accent-color);
+}
+
+.order-summary-box p {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.payment-container button {
+    width: 100%;
+    margin-top: 10px;
+}
