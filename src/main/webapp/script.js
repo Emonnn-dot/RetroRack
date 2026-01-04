@@ -98,6 +98,28 @@ if (payForm) {
         }
 
         alert("Validation success! Your order is being processed by the Java Server.");
-        // Data will be sent to PaymentServlet (Ahli 3 task)
+        // Data will be sent to PaymentServlet 
+    });
+}
+// ==========================================
+// 6. CHECKOUT PAGE LOGIC
+// ==========================================
+const checkoutForm = document.getElementById('checkoutForm');
+if (checkoutForm) {
+    checkoutForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        
+      
+        const name = document.getElementById('custName').value.trim();
+        const address = document.getElementById('custAddress').value.trim();
+
+   
+        if (name === "" || address === "") {
+            alert("Error: Please provide all shipping details!");
+            return;
+        }
+
+        alert("Shipping details saved! Redirecting to payment...");
+        window.location.href = "payment.html"; 
     });
 }
