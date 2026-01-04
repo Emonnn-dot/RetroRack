@@ -30,13 +30,25 @@ if (registerForm) {
             return;
         }
 
+        if (!email.includes("@") || !email.includes(".")) {
+            alert("Error: Please enter a valid email address!");
+            event.preventDefault();
+            return;
+        }
+
         if (password !== confirmPass) {
             alert("Error: Passwords do not match!");
             event.preventDefault();
             return;
         }
 
-        event.preventDefault();
+        if (password.length < 5) {
+            alert("Error: Password must be at least 5 characters long!");
+            event.preventDefault();
+            return;
+        }
+
+        event.preventDefault(); // Stop for demo
         alert("Registration successful! Redirecting to login page...");
         window.location.href = "login.html";
     });
@@ -57,29 +69,35 @@ if (loginForm) {
             return;
         }
 
-        event.preventDefault();
+        event.preventDefault(); // Stop for demo
         alert("Login successful! Welcome back to RetroRack.");
         window.location.href = "index.html";
     });
 }
 
 // ==========================================
-// 5. CHECKOUT PAGE LOGIC
+// 5. PAYMENT PAGE LOGIC
 // ==========================================
-const checkoutForm = document.getElementById('checkoutForm');
-if (checkoutForm) {
-    checkoutForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const name = document.getElementById('custName').value.trim();
-        const phone = document.getElementById('custPhone').value.trim();
-        const address = document.getElementById('custAddress').value.trim();
+const payForm = document.getElementById('payForm');
+if (payForm) {
+    payForm.addEventListener('submit', function(event) {
+        const fullName = document.getElementById('fullName').value.trim();
+        const address = document.getElementById('address').value.trim();
+        const cardNum = document.getElementById('cardNum').value.trim();
 
-        if (name === "" || phone === "" || address === "") {
-            alert("Error: Please provide all shipping details!");
+        if (fullName === "" || address === "" || cardNum === "") {
+            alert("Error: Please fill in all payment details!");
+            event.preventDefault();
             return;
         }
 
-        alert("Shipping information saved! Redirecting to payment...");
-        window.location.href = "payment.html"; 
+        if (cardNum.length !== 16 || isNaN(cardNum)) {
+            alert("Error: Card number must be 16 numeric digits!");
+            event.preventDefault();
+            return;
+        }
+
+        alert("Validation success! Your order is being processed by the Java Server.");
+        // Data will be sent to PaymentServlet (Ahli 3 task)
     });
 }
