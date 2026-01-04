@@ -85,20 +85,26 @@ if (payForm) {
         const address = document.getElementById('address').value.trim();
         const cardNum = document.getElementById('cardNum').value.trim();
 
+        
         if (fullName === "" || address === "" || cardNum === "") {
             alert("Error: Please fill in all payment details!");
             event.preventDefault();
             return;
         }
 
+        
         if (cardNum.length !== 16 || isNaN(cardNum)) {
             alert("Error: Card number must be 16 numeric digits!");
             event.preventDefault();
             return;
         }
 
-        alert("Validation success! Your order is being processed by the Java Server.");
-        // Data will be sent to PaymentServlet 
+       
+        event.preventDefault(); 
+        alert("Validation success! Your order is being processed.");
+        
+       
+        window.location.href = "success.html"; 
     });
 }
 // ==========================================
