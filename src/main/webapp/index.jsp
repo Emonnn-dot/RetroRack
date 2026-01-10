@@ -1,4 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,11 +23,11 @@
    <main>
         <section class="hero">
             <h2>Welcome to RetroRack</h2>
-            
+
             <h3>Discover Unique Pre-Loved Fashion</h3>
             <p>Sustainable thrift shopping made simple & stylish</p>
-            
-           <button onclick="goToProducts()">Shop Now</button>
+
+           <a href="products.jsp"><button>Shop Now</button></a>
         </section>
         <section class="about">
     <div class="about-content">
@@ -43,26 +42,18 @@
     <div style="padding: 20px;">
         <h3>RetroRack</h3>
         <p>Email: hello@retrorack.com | Phone: 012-3456789</p>
-        
+
         <p>
-            Follow Us: 
-            <a href="#" style="color: white;">Facebook</a> | 
+            Follow Us:
+            <a href="#" style="color: white;">Facebook</a> |
             <a href="#" style="color: white;">Instagram</a>
         </p>
-        
+
         <hr>
         <p>&copy; 2025 RetroRack Team</p>
     </div>
 </footer>
 
-    <script>
-    function goToProducts() {
-      
-        alert("Welcome to RetroRack! Exploring our collections...");
-        
-        window.location.assign("products.jsp");
-    }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html> 

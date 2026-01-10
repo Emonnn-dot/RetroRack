@@ -1,65 +1,94 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="model.Cart, model.CartItem, java.util.ArrayList" %>
+<%@ page import="model.Cart, model.CartItem, model.Product" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RetroRack - Shopping Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroRack - Your Cart</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav>
         <a href="index.jsp">Home</a>
         <a href="products.jsp">Products</a>
-        <a href="cart.jsp">Cart</a>
-        <a href="login.jsp" class="account-btn">Account</a>
+        <a href="cart.jsp" class="active">Cart</a>
+        <a href="login.jsp">Account</a>
     </nav>
 
-    <main style="padding: 60px; text-align: center;">
-        <h2>Your Shopping Cart</h2>
+    <main class="cart-wrapper">
+        <%
+            Cart cart = (Cart) session.getAttribute("cart");
+            int itemCount = (cart != null) ? cart.getItems().size() : 0;
+        %>
 
-        <table border="1" style="width:80%; margin: auto; border-collapse: collapse;">
-            <thead>
-                <tr style="background-color: #f2f2f2;">
-                    <th>Product Details</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
+        <h2>Shopping Cart (<%= itemCount %> Items)</h2>
+        <div class="divider"></div>
+
+        <div class="cart-container">
+            <%
+                if (cart != null && !cart.getItems().isEmpty()) {
+                    for (CartItem item : cart.getItems()) {
+                        Product p = item.getProduct();
+            %>
+                <div class="cart-item">
                 <%
-                    Cart cart = (Cart) session.getAttribute("cart");
-                    if (cart != null && !cart.getItems().isEmpty()) {
-                        for (CartItem item : cart.getItems()) {
+                String img = "";
+                switch (p.getProductID()) {
+                    case "P001": img = "dress.jpg"; break;
+                    case "P002": img = "BrownTShirt.jpg"; break;
+                    case "P003": img = "Vintage-Jacket.jpg"; break;
+                    case "P004": img = "Grey-Palazzo.jpg"; break;
+                    case "P005": img = "Men-Polo-Shirt.jpg"; break;
+                    case "P006": img = "Woman-Skirt.jpg"; break;
+                }
                 %>
-                <tr>
-                    <td><%= item.getProduct().getProductID() %> : <%= item.getProduct().getName() %></td>
-                    <td><%= item.getQuantity() %></td>
-                    <td>RM <%= String.format("%.2f", item.getSubTotal()) %></td>
-                </tr>
-                <%
-                        }
-                    } else {
-                %>
-                <tr>
-                    <td colspan="3">Your cart is empty.</td>
-                </tr>
-                <%
+                <img src="Images/<%= img %>" alt="<%= p.getName() %>">
+
+                    <div class="item-details">
+                        <h3><%= p.getName() %></h3>
+                        <p>Qty: <%= item.getQuantity() %> | RM <%= String.format("%.2f", p.getPrice()) %></p>
+                    </div>
+                    <button class="btn-remove" onclick="location.href='RemoveItemServlet?productId=<%= p.getProductID() %>'">Remove</button>
+                </div>
+            <%
                     }
-                %>
-            </tbody>
-        </table>
+            %>
+                <div class="cart-summary">
+                    <div class="summary-total">
+                        <h3>Total Amount: <span>RM <%= String.format("%.2f", cart.calculateTotal()) %></span></h3>
+                    </div>
+                    <div class="cart-actions">
+                        <a href="products.jsp" class="continue-link">Continue Shopping</a>
+                        <button class="add-to-cart" onclick="proceedToPayment()">
+                            Proceed to Checkout
+                        </button>
 
-        <div style="margin-top: 20px;">
-            <h3>Total: RM <%= (cart != null) ? String.format("%.2f", cart.calculateTotal()) : "0.00" %></h3>
+                        <script>
+                        function proceedToPayment() {
+                            alert("Shipping details saved! Redirecting to payment...");
+                            window.location.href = "checkout.jsp";
+                        }
+                        </script>
 
-            <button onclick="window.location.href='products.jsp'" style="padding: 10px;">Continue Shopping</button>
-            <button onclick="window.location.href='login.jsp'" style="padding: 10px; background-color: #28a745; color: white; cursor: pointer;">Checkout</button>
+                    </div>
+                </div>
+            <%
+                } else {
+            %>
+                <div style="text-align: center; padding: 50px;">
+                    <h3>Your shopping cart is empty.</h3>
+                    <a href="products.jsp" class="continue-link" style="display:inline-block; margin-top:20px;">Go To Shopping</a>
+                </div>
+            <%
+                }
+            %>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 RetroRack Team</p>
+        <p>&copy; 2025 RetroRack Team</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
