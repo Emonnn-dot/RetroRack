@@ -1,4 +1,8 @@
 
+/* =========================================
+   1. COLOR VARIABLES (Theme Consistency)
+   ========================================= */
+
 :root {
     --primary-color: #d4bfb2;      /* Soft Brown */
     --text-color: #5D4037;       /* Dark Brown */
@@ -7,7 +11,7 @@
     --accent-color: #BC8F8F;     /* Rosy Brown */
 }
 
-/* 2. BASIC SETUP */
+/* 2. GENERAL STYLES - Set the default font and background for the whole website*/
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -17,7 +21,7 @@ body {
     line-height: 1.6;
 }
 
-/* 3. HEADER */
+/* 3. HEADER- Branding and visual identity */
 header {
     background-color: var(--header-color);
     color: #F5F5F5;
@@ -35,36 +39,37 @@ header p {
     font-size: 24px;      
     font-weight: normal;  
 }
-/* 4. NAVIGATION */
+/* 4. NAVIGATION - Sticky navigation */
+/* Ensures the menu remains fixed at the top during scrolling */
 nav {
     background-color: var(--text-color);
     text-align: center;
     padding: 15px 0;
-    position: sticky; 
+    position: sticky; /* Keeps menu visible while scrolling */
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Ensure it stays above other layers */
 }
-
+/* Styling navigation links */
 nav a {
     color: #FFF8E1;
     text-decoration: none;
     margin: 0 20px;
     font-weight: bold;
     text-transform: uppercase;
-    transition: 0.3s;
+    transition: 0.3s; /* Smooth hover effect for GUI interactivity */
 }
-
+/* This provides immediate visual feedback to the user when hovering over a link */
 nav a:hover {
     color: var(--primary-color);
 }
 
-/* 6. ABOUT SECTION STYLING */
+/* 5. ABOUT SECTION STYLING */
 .about {
     padding: 60px 20px;
     background-color: var(--background-color); 
     text-align: center;
 }
-
+/*Constrains width to make text easier to read */
 .about-content {
     max-width: 800px;
     margin: 0 auto; 
@@ -92,9 +97,9 @@ nav a:hover {
     font-style: italic; 
 }
 
-
+/* LOGIN BUTTON - Targets only the login link for special styling */
 nav a[href="login.html"] {
-    float: right;
+    float: right; /* Move button to the right side */
     background-color: var(--header-color);
     padding: 8px 15px;
     border-radius: 5px;
@@ -102,20 +107,20 @@ nav a[href="login.html"] {
     border: 1px solid var(--primary-color);
     margin-top: -5px; 
 }
-
+/* HOVER EFFECT - Change color to show the button is clickable */
 nav a[href="login.html"]:hover {
     background-color: var(--accent-color);
     color: white;
 }
 
-/* 5. HERO SECTION (Welcome Box) */
+/* 6. HERO SECTION (Welcome Box) */
 .hero {
     text-align: center;
     padding: 100px 20px;
     
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                       url('../Images/hero-bg.jpeg');
-    
+/* Ensures the background image covers the entire area */    
     background-size: cover;
     background-position: center;
     color: white; 
@@ -132,7 +137,7 @@ nav a[href="login.html"]:hover {
     margin-bottom: 10px;
 }
 
-/* 6. BUTTON */
+/* 7. GLOBAL BUTTON STYLING */
 button {
     background-color: var(--header-color);
     color: white;
@@ -151,7 +156,7 @@ button:hover {
     transform: translateY(-3px); 
 }
 
-/* 7. FOOTER */
+/* 8. FOOTER */
 footer {
     text-align: center;
     padding: 30px;
@@ -160,12 +165,12 @@ footer {
     margin-top: 50px;
 } 
 
-/* 8. LOGIN PAGE STYLING */
+/* 9. LOGIN PAGE STYLING */
 .login-container {
     background-color: white;
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Adding depth using CSS box-shadow property */
     display: inline-block; 
     min-width: 350px;
     border: 1px solid var(--primary-color); 
@@ -177,7 +182,7 @@ footer {
     margin-bottom: 5px;
 }
 
-
+/* Ensuring left-alignment for better readability of form labels */
 .login-group {
     text-align: left;
     margin-bottom: 20px;
@@ -188,16 +193,16 @@ footer {
     font-size: 0.9em;
     color: var(--text-color);
 }
-
+/* Applying uniform styling to input fields */
 .login-container input {
     width: 100%;
     padding: 12px;
     margin-top: 8px;
     border: 1.5px solid #ddd;
     border-radius: 8px;
-    box-sizing: border-box; 
+    box-sizing: border-box;  /* Standardizing the box model */
     font-size: 1em;
-    transition: 0.3s;
+    transition: 0.3s; /* Smooth state transitions */
 }
 
 
@@ -206,26 +211,21 @@ footer {
     outline: none;
     box-shadow: 0 0 5px var(--primary-color);
 }
-
-
-.login-container .add-to-cart {
-    width: 100%;
-    margin-top: 10px;
-}
-
+/* Styling for secondary links */
 .login-container p a {
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
-
+/* Interactive hover effect to clearly indicate clickable links */
 .login-container p a:hover {
     text-decoration: underline;
     color: var(--accent-color);
 }
 /* =========================================
-   9. PAYMENT PAGE STYLING 
+   10. PAYMENT PAGE STYLING 
    ========================================= */
+/* Center the payment form using Flexbox Layout */
 .payment-wrapper {
     display: flex;
     justify-content: center;
@@ -233,11 +233,11 @@ footer {
     padding: 60px 20px;
     min-height: 60vh; 
 }
-
+/*Styled card container for the payment form */
 .payment-container {
     background-color: white;
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 15px; /* for modern rounded corner */
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     width: 100%;
     max-width: 500px; 
@@ -263,7 +263,7 @@ footer {
     color: var(--text-color);
 }
 
-
+/* Uniform styling for form elements */
 .payment-group input, 
 .payment-group textarea, 
 .payment-group select {
@@ -271,18 +271,18 @@ footer {
     padding: 12px;
     border: 1.5px solid #ddd;
     border-radius: 8px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding doesn't affect the element width */
     font-size: 1em;
-    transition: 0.3s;
+    transition: 0.3s; /* Smooth transition effect */
     font-family: inherit;
 }
-
+/* Change border color when user focuses on an input */
 .payment-group input:focus {
     border-color: var(--accent-color);
     outline: none;
     box-shadow: 0 0 5px var(--primary-color);
 }
-
+/* Order summarry section */
 .order-summary-box {
     background-color: var(--background-color);
     padding: 15px;
@@ -290,7 +290,7 @@ footer {
     margin: 20px 0;
     border: 1px dashed var(--accent-color);
 }
-
+/* Space between layout to align labels and prices at opposite ends */
 .order-summary-box p {
     margin: 5px 0;
     display: flex;
@@ -298,19 +298,20 @@ footer {
     font-weight: bold;
     color: var(--text-color);
 }
-
+/* Call-to-Action button */
 .payment-container button {
     width: 100%;
     margin-top: 10px;
 }
 /* =========================================
-   10. SUCCESS PAGE STYLING 
+   11. SUCCESS PAGE STYLING 
    ========================================= */
+/* Center the success message */  
 .success-body {
     text-align: center;
     background-color: var(--background-color);
 }
-
+/* Using Flexbox to center the content */
 .success-wrapper {
     display: flex;
     justify-content: center;
@@ -318,7 +319,7 @@ footer {
     min-height: 80vh; 
     padding: 20px;
 }
-
+/* Modern Card UI */
 .success-box {
     background-color: white;
     padding: 50px;
@@ -328,11 +329,12 @@ footer {
     width: 100%;
     border: 1px solid var(--primary-color);
 }
-
+/* Implementing Keyframe Animation */
 .success-icon {
     font-size: 70px;
     color: #28a745; 
     margin-bottom: 20px;
+/* Animation triggers upon page load to provide visual feedback */
     animation: scaleUp 0.5s ease-out; 
 }
 
@@ -340,7 +342,7 @@ footer {
     color: var(--header-color);
     margin-bottom: 10px;
 }
-
+/* Styling for Order ID to distinguish dynamic data from static text */
 .order-id {
     font-style: italic;
     color: #777;
@@ -348,20 +350,21 @@ footer {
     font-size: 0.9em;
 }
 
-
+/* CSS Animation Definition for the 'scaleUp' effect */
 @keyframes scaleUp {
     0% { transform: scale(0); }
     100% { transform: scale(1); }
 }
 /* =========================================
-   11. CART PAGE STYLING 
+   12. CART PAGE STYLING 
    ========================================= */
+/* Main wrapper to constrain the cart content width */
 .cart-wrapper {
     padding: 60px 20px;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centers the container within the viewport */
 }
-
+/* Card-style container for the shopping cart interface */
 .cart-container {
     background-color: white;
     padding: 30px;
@@ -369,20 +372,20 @@ footer {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     border: 1px solid var(--primary-color);
 }
-
+/* Flexbox layout to align product details and actions horizontally */
 .cart-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee; /* Visual separator between cart items */
 }
-
+/* Optimized image handling for product thumbnails */
 .cart-item img {
     width: 80px;
     height: 80px;
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: cover; /* Maintains aspect ratio without stretching the image */
 }
 
 .item-details {
@@ -394,23 +397,23 @@ footer {
     margin: 0;
     color: var(--text-color);
 }
-
+/* Distinct styling for destructive actions (Removing items) */
 .btn-remove {
     background-color: #ff4d4d;
     padding: 8px 15px;
     font-size: 0.9em;
     border-radius: 5px;
 }
-
+/* Interactive hover state for user feedback */
 .btn-remove:hover {
     background-color: #cc0000;
 }
-
+/* Alignment for final total calculation */
 .cart-summary {
     margin-top: 30px;
     text-align: right;
 }
-
+/* To separate 'Continue Shopping' and 'Checkout' buttons */
 .cart-actions {
     display: flex;
     justify-content: space-between;
@@ -418,14 +421,15 @@ footer {
     margin-top: 20px;
 }
 /* =========================================
-   12. CHECKOUT PAGE STYLING 
+   13. CHECKOUT PAGE STYLING 
    ========================================= */
+/* Using Flexbox to center the checkout card */
 .checkout-main {
     padding: 60px 20px;
     display: flex;
     justify-content: center;
 }
-
+/* Card-based UI design to maintain consistency */
 .checkout-card {
     background-color: white;
     padding: 40px;
@@ -435,10 +439,10 @@ footer {
     max-width: 1000px;
     border: 1px solid var(--primary-color);
 }
-
+/* Implementing CSS Grid for a complex two-column layout */
 .checkout-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.5fr 1fr; /* Multi-column responsive grid system */
     gap: 40px;
     text-align: left;
     margin-top: 30px;
@@ -453,7 +457,7 @@ footer {
     font-weight: bold;
     margin-bottom: 8px;
 }
-
+/* Ensuring consistent input styling */
 .input-box input, .input-box textarea {
     width: 100%;
     padding: 12px;
@@ -461,27 +465,27 @@ footer {
     border-radius: 8px;
     box-sizing: border-box;
 }
-
+/* Sidebar styling for order review */
 .order-review {
     background-color: var(--background-color);
     padding: 25px;
     border-radius: 12px;
     border: 1px solid var(--accent-color);
 }
-
+/* Flexbox used to align labels and dynamic price values */
 .summary-line {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
-
+/* Highlighting the final total amount */
 .total-line {
     font-size: 1.2em;
     font-weight: bold;
     color: var(--header-color);
     margin-top: 15px;
 }
-
+/* Primary Call-to-Action (CTA) button */
 .pay-btn {
     width: 100%;
     background-color: var(--text-color);
@@ -495,4 +499,4 @@ footer {
     color: var(--text-color);
     text-decoration: none;
     font-size: 0.9em;
-}
+} 
