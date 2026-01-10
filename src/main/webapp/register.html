@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RetroRack - Register</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.jsp">Home</a>
+        <a href="products.jsp">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="login.jsp">Login</a>
+    </nav>
+
+    <main style="padding: 50px; text-align: center;">
+        <div class="login-container">
+            <h2>Create Account</h2>
+            <div class="divider"></div>
+            
+            <form id="registerForm" novalidate>
+                <div class="login-group">
+                    <label>Username:</label>
+                    <input type="text" id="Username" name="Username">
+                </div>
+
+                <div class="login-group">
+                    <label>Email Address:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div class="login-group">
+                    <label>Password:</label>
+                    <input type="password" id="regPassword" name="password">
+                </div>
+
+                <div class="login-group">
+                    <label>Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword">
+                </div>
+
+                <button type="submit" class="add-to-cart">Register Now</button>
+            </form>
+            
+            <p style="margin-top: 20px;">Already have an account? <a href="login.jsp">Login here</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RetroRack Team</p>
+    </footer>
+
+    <script>
+        const registerForm = document.getElementById('registerForm');
+
+        registerForm.addEventListener('submit', function(event) {
+            const name = document.getElementById('Username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('regPassword').value.trim();
+            const confirmPass = document.getElementById('confirmPassword').value.trim();
+
+            // 1. Validation for Empty Fields
+            if (name === "" || email === "" || password === "" || confirmPass === "") {
+                alert("Error: All fields are required!");
+                event.preventDefault();
+                return;
+            }
+
+            // 2. Simple Email Format Validation 
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Error: Please enter a valid email address!");
+                event.preventDefault();
+                return;
+            }
+
+            // 3. Password Matching Validation
+            if (password !== confirmPass) {
+                alert("Error: Passwords do not match!");
+                event.preventDefault();
+                return;
+            }
+
+            // 4. Password Length Validation
+            if (password.length < 5) {
+                alert("Error: Password must be at least 5 characters long!");
+                event.preventDefault();
+                return;
+            }
+            event.preventDefault();
+
+            alert("Registration successful! Redirecting to login page...");
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html> 

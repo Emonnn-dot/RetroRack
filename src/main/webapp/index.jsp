@@ -1,0 +1,68 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroRack | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>RetroRack</h1>
+        <p>Your Favorite Vintage Collections</p>
+    </header>
+
+   <nav>
+    <a href="index.jsp">Home</a>
+    <a href="products.jsp">Products</a>
+    <a href="cart.jsp">Cart</a>
+    <a href="login.jsp" class="account-btn">Account</a>
+   </nav>
+
+   <main>
+        <section class="hero">
+            <h2>Welcome to RetroRack</h2>
+            
+            <h3>Discover Unique Pre-Loved Fashion</h3>
+            <p>Sustainable thrift shopping made simple & stylish</p>
+            
+           <button onclick="goToProducts()">Shop Now</button>
+        </section>
+        <section class="about">
+    <div class="about-content">
+        <h2>Our Story</h2>
+        <div class="divider"></div>
+        <p>RetroRack was founded to bring back the golden era of fashion. We curate the best pre-loved and vintage collections just for you, ensuring every piece tells a unique story.</p>
+    </div>
+</section>
+    </main>
+
+    <footer>
+    <div style="padding: 20px;">
+        <h3>RetroRack</h3>
+        <p>Email: hello@retrorack.com | Phone: 012-3456789</p>
+        
+        <p>
+            Follow Us: 
+            <a href="#" style="color: white;">Facebook</a> | 
+            <a href="#" style="color: white;">Instagram</a>
+        </p>
+        
+        <hr>
+        <p>&copy; 2025 RetroRack Team</p>
+    </div>
+</footer>
+
+    <script>
+    function goToProducts() {
+      
+        alert("Welcome to RetroRack! Exploring our collections...");
+        
+        window.location.assign("products.jsp");
+    }
+    </script>
+
+</body>
+</html> 
