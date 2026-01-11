@@ -10,6 +10,11 @@ import java.io.IOException;
 @WebServlet("/AddToCartServlet")
 public class AddToCartServlet extends HttpServlet {
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doPost(request, response);
+    }
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -42,6 +47,7 @@ public class AddToCartServlet extends HttpServlet {
 
         cart.addItem(p, qty);
 
-        response.sendRedirect("cart.jsp");
+        //response.sendRedirect("cart.jsp");
+        response.sendRedirect("products.jsp?added=" + pid);
     }
 }
