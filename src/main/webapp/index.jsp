@@ -14,20 +14,20 @@
     </header>
 
    <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="cart.html">Cart</a>
-    <a href="login.html" class="account-btn">Account</a>
+    <a href="index.jsp">Home</a>
+    <a href="products.jsp">Products</a>
+    <a href="cart.jsp">Cart</a>
+    <a href="login.jsp" class="account-btn">Account</a>
    </nav>
 
    <main>
         <section class="hero">
             <h2>Welcome to RetroRack</h2>
-            
+
             <h3>Discover Unique Pre-Loved Fashion</h3>
             <p>Sustainable thrift shopping made simple & stylish</p>
-            
-           <button onclick="goToProducts()">Shop Now</button>
+
+           <a href="products.jsp"><button>Shop Now</button></a>
         </section>
         <section class="about">
     <div class="about-content">
@@ -42,13 +42,13 @@
     <div style="padding: 20px;">
         <h3>RetroRack</h3>
         <p>Email: hello@retrorack.com | Phone: 012-3456789</p>
-        
+
         <p>
-            Follow Us: 
-            <a href="#" style="color: white;">Facebook</a> | 
+            Follow Us:
+            <a href="#" style="color: white;">Facebook</a> |
             <a href="#" style="color: white;">Instagram</a>
         </p>
-        
+
         <hr>
         <p>&copy; 2025 RetroRack Team</p>
     </div>

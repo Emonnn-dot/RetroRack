@@ -3,16 +3,58 @@
 // ==========================================
 function goToProducts() {
     alert("Welcome to RetroRack! Exploring our collections...");
-    window.location.assign("products.html"); 
+    //window.location.assign("products.jsp");
+    window.location.href = "products.jsp";
 }
 
 // ==========================================
 // 2. PRODUCT PAGE LOGIC
 // ==========================================
-function addToCart(itemName) {
-    alert(itemName + " added to cart!");
-}
+function addToCart(id, itemName, price) {
+    let cart = JSON.parse(localStorage.getItem('retroRackCart')) || [];
+    cart.push({ id: id, name: itemName, price: price });
+    localStorage.setItem('retroRackCart', JSON.stringify(cart));
 
+    alert(itemName + " added to cart!");
+
+    window.location.href = "AddToCartServlet?productId=" + id + "&quantity=1";
+}
+function removeItem(button) {
+    if (confirm('Are you sure you want to remove this item?')) {
+        const item = button.closest('.cart-item');
+        item.style.opacity = '0';
+
+        setTimeout(() => {
+            item.remove();
+            updateTotal();
+        }, 300);
+    }
+}
+function updateTotal() {
+    let total = 0;
+    const items = document.querySelectorAll('.cart-item');
+
+    items.forEach(item => {
+        const priceElement = item.querySelector('.item-details p');
+        if (priceElement) {
+            const priceText = priceElement.innerText;
+            const match = priceText.match(/RM\s*([\d.]+)/);
+            if (match) {
+                total += parseFloat(match[1]);
+            }
+        }
+    });
+
+    const totalDisplay = document.querySelector('.summary-total span');
+    if (totalDisplay) {
+        totalDisplay.innerText = "RM " + total.toFixed(2);
+    }
+
+    const cartHeader = document.querySelector('.cart-wrapper h2');
+    if (cartHeader) {
+        cartHeader.innerText = `Shopping Cart (${items.length} Items)`;
+    }
+}
 // ==========================================
 // 3. REGISTER PAGE LOGIC
 // ==========================================
@@ -50,7 +92,7 @@ if (registerForm) {
 
         event.preventDefault(); // Stop for demo
         alert("Registration successful! Redirecting to login page...");
-        window.location.href = "login.html";
+        window.location.href = "login.jsp";
     });
 }
 
@@ -60,18 +102,20 @@ if (registerForm) {
 const loginForm = document.getElementById('loginForm');
 if (loginForm) {
     loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        console.log("Login button clicked");
         const user = document.getElementById('username').value.trim();
         const pass = document.getElementById('password').value.trim();
 
         if (user === "" || pass === "") {
             alert("Error: Username and Password are required!");
-            event.preventDefault();
+            //event.preventDefault();
             return;
         }
 
-        event.preventDefault(); // Stop for demo
+        //event.preventDefault(); // Stop for demo
         alert("Login successful! Welcome back to RetroRack.");
-        window.location.href = "index.html";
+        window.location.href = "index.jsp";
     });
 }
 
@@ -100,11 +144,11 @@ if (payForm) {
         }
 
        
-        event.preventDefault(); 
+        event.preventDefault();
         alert("Validation success! Your order is being processed.");
         
        
-        window.location.href = "success.html"; 
+        //window.location.href = "success.jsp";
     });
 }
 // ==========================================
@@ -113,19 +157,16 @@ if (payForm) {
 const checkoutForm = document.getElementById('checkoutForm');
 if (checkoutForm) {
     checkoutForm.addEventListener('submit', function(event) {
-        event.preventDefault(); 
-        
-      
+
         const name = document.getElementById('custName').value.trim();
         const address = document.getElementById('custAddress').value.trim();
 
-   
         if (name === "" || address === "") {
             alert("Error: Please provide all shipping details!");
+            event.preventDefault();
             return;
         }
 
         alert("Shipping details saved! Redirecting to payment...");
-        window.location.href = "payment.html"; 
     });
 }

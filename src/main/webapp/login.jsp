@@ -6,30 +6,31 @@
     <link rel="stylesheet" href="css/style.css"> </head>
 <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="cart.html">Cart</a>
+        <a href="index.jsp">Home</a>
+        <a href="products.jsp">Products</a>
+        <a href="cart.jsp">Cart</a>
     </nav>
 
     <main style="padding: 50px; text-align: center;">
         <div class="login-container">
             <h2>User Login</h2>
-            <div class="divider"></div> 
-           <form id="loginForm" novalidate>
+            <div class="divider"></div>
+
+           <form onsubmit="window.location.href='index.jsp'; return false;">
                 <div class="login-group" style="text-align: left; margin-bottom: 15px;">
                     <label>Username:</label>
                     <input type="text" id="username" name="username" required>
                 </div>
-                
+
                 <div class="login-group" style="text-align: left; margin-bottom: 15px;">
                     <label>Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                
+
                 <button type="submit" class="add-to-cart">Login</button>
             </form>
-            
-            <p style="margin-top: 20px;">Don't have an account? <a href="register.html" style="color: var(--primary-color);">Register here</a></p>
+
+            <p style="margin-top: 20px;"> Don't have an account? <a href="register.jsp" style="color: var(--primary-color);">Register here</a></p>
         </div>
     </main>
 

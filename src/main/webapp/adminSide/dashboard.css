@@ -1,0 +1,348 @@
+/* --- 1. THEME VARIABLES (VINTAGE PINK) --- */
+:root {
+    --primary-color: #F8D7DA;      /* Pastel pink for borders and cards */
+    --text-color: #5D4037;        /* Deep brown for typography */
+    --background-color: #FFF5F5;  /* Blush cream background color */
+    --header-color: #D1A3A3;      /* Muted rose for headers and active menu */
+    --accent-color: #E8A2A2;      /* Vintage pink for icons and highlights */
+    --white: #ffffff;
+    --danger: #FF4D4D;            /* Red color for delete actions */
+}
+
+/* --- 2. GLOBAL STYLING --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    letter-spacing: 0.2px;
+}
+
+body { 
+    background-color: var(--background-color); 
+    color: var(--text-color); 
+    overflow: hidden; 
+    font-size: 13px; 
+}
+
+/* --- 3. SIDEBAR NAVIGATION --- */
+.sidebar {
+    width: 230px;
+    position: fixed;
+    height: 100vh;
+    background: var(--white); 
+    border-right: 1px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    z-index: 100;
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-small {
+    width: 100px;
+    filter: sepia(0.2) hue-rotate(320deg) brightness(0.9); /* Vintage pink visual filter */
+}
+
+.nav-menu {
+    list-style: none;
+    flex-grow: 1;
+    padding: 0 15px;
+}
+
+.nav-item {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+
+.nav-item a { 
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.2s;
+    border-radius: 8px;
+}
+
+.nav-item.active a, 
+.nav-item:hover a { 
+    background: var(--header-color); 
+    color: var(--white); 
+}
+
+.nav-item i {
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+/* --- UPDATED SIDEBAR FOOTER --- */
+.sidebar-footer {
+    padding: 8px;
+    text-align: center;
+    border-top: 1px solid var(--primary-color);
+    display: flex;
+    justify-content: left; 
+    align-items: center;
+}
+
+.sidebar-footer a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-footer i {
+    font-size: 20px; /* Medium-sized icon */
+    color: var(--header-color);
+    transition: 0.3s;
+}
+
+.sidebar-footer i:hover {
+    color: var(--danger); /* Change to red on hover */
+    transform: scale(1.1);
+}
+
+/* --- 4. MAIN CONTENT AREA --- */
+.main-content {
+    margin-left: 230px;
+    padding: 30px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.content-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-color);
+    border-left: 5px solid var(--accent-color);
+    padding-left: 15px;
+}
+
+/* --- 5. DASHBOARD STATISTICS --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card { 
+    background: var(--white);
+    padding: 20px; 
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 4px 4px 0px var(--primary-color); /* Retro-style shadow effect */
+}
+
+.stat-label {
+    font-size: 11px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    display: block;
+    margin-top: 5px;
+    color: var(--text-color);
+}
+
+/* --- 6. TABLE STYLING --- */
+.table-container { 
+    background: var(--white); 
+    border: 1px solid var(--primary-color); 
+    border-radius: 10px;
+    padding: 20px; 
+}
+
+.table-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search-box {
+    position: relative;
+    width: 250px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    color: var(--header-color);
+}
+
+.search-box input { 
+    width: 100%;
+    padding: 8px 8px 8px 32px; 
+    border: 1px solid var(--primary-color);
+    border-radius: 6px; 
+    outline: none;
+    font-size: 12px;
+    background: var(--background-color);
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--text-color);
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.product-table td {
+    padding: 12px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--background-color);
+}
+
+/* Status badges */
+.badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge.available { background: #E8F5E9; color: #2E7D32; }
+.badge.soldout { background: #FFEBEE; color: #C62828; }
+
+/* Edit and delete action buttons */
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px; 
+    color: var(--header-color);
+    margin-right: 10px;
+    transition: 0.2s;
+    vertical-align: middle;
+}
+
+.action-btn:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.action-btn.delete {
+    color: var(--danger); /* Red color for delete icon */
+}
+
+/* --- 7. MODAL STYLING --- */
+.modal-overlay { 
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%; 
+    background: rgba(93, 64, 55, 0.4);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-card { 
+    background: var(--white);
+    width: 400px;
+    padding: 30px; 
+    border: 2px solid var(--header-color); 
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px var(--primary-color);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.close-x {
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.form-group input, 
+.form-group select { 
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-color); 
+    border-radius: 8px;
+    outline: none;
+    font-size: 12px;
+    background: var(--background-color);
+}
+
+.btn-save {
+    width: 100%;
+    background: var(--header-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.btn-save:hover {
+    background: var(--accent-color);
+}
+
+.btn-add {
+    background: var(--header-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.btn-add:hover {
+    background: var(--accent-color);
+} 

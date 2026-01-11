@@ -14,9 +14,9 @@
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="login.html">Login</a>
+    <a href="index.jsp">Home</a>
+    <a href="products.jsp">Products</a>
+    <a href="login.jsp">Login</a>
 </nav>
 
 <div class="payment-wrapper">
@@ -27,7 +27,7 @@
                 <label for="fullName">Full Name</label>
                 <input type="text" id="fullName" name="fullName">
             </div>
-            
+
             <div class="payment-group">
                 <label for="address">Shipping Address</label>
                 <textarea id="address" name="address" rows="3"></textarea>
@@ -40,12 +40,21 @@
 
             <div class="order-summary-box">
                 <p><span>Total Amount:</span> <span>RM 0.00</span></p>
+                <%
+                    String finalTotal = (String) session.getAttribute("finalTotal");
+                %>
+                <p>
+                    <span>Total Amount:</span>
+                    <span>RM <%= (finalTotal != null) ? finalTotal : "0.00" %></span>
+                </p>
             </div>
 
-            <button type="submit">Complete Order</button>
+            <button type="button" onclick="window.location.href='success.html'">
+                Complete Order
+            </button>
 
             <div style="text-align: center; margin-top: 15px;">
-                <a href="cart.html" style="color: var(--text-color); text-decoration: none; font-size: 0.9em;">
+                <a href="cart.jsp" style="color: var(--text-color); text-decoration: none; font-size: 0.9em;">
                     &larr; Back to Shopping Cart
                 </a>
             </div>
