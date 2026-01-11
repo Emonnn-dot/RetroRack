@@ -18,28 +18,19 @@
         <h2>Create Account</h2>
         <div class="divider"></div>
 
-        <form onsubmit="window.location.href='index.jsp'; return false;">
-            <div class="login-group">
-                <label>Username:</label>
-                <input type="text" id="Username" name="Username">
-            </div>
-
+        <form action="RegisterServlet" method="POST"> <div class="login-group">
+            <label>Username:</label>
+            <input type="text" name="username" required>
+        </div>
             <div class="login-group">
                 <label>Email Address:</label>
-                <input type="email" id="email" name="email">
+                <input type="email" name="email" required>
             </div>
-
             <div class="login-group">
                 <label>Password:</label>
-                <input type="password" id="regPassword" name="password">
+                <input type="password" name="password" required>
             </div>
-
-            <div class="login-group">
-                <label>Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword">
-            </div>
-
-            <button type="submit" class="add-to-cart">Register Now</button>
+            <button type="submit">Register Now</button>
         </form>
 
         <p style="margin-top: 20px;">Already have an account? <a href="login.jsp">Login here</a></p>

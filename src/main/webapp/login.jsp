@@ -16,18 +16,19 @@
             <h2>User Login</h2>
             <div class="divider"></div>
 
-           <form onsubmit="window.location.href='index.jsp'; return false;">
-                <div class="login-group" style="text-align: left; margin-bottom: 15px;">
-                    <label>Username:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
+            <% if ("invalid".equals(request.getParameter("error"))) { %>
+            <p style="color:red;">Invalid Username or Password!</p>
+            <% } %>
 
-                <div class="login-group" style="text-align: left; margin-bottom: 15px;">
+            <form action="LoginServlet" method="POST"> <div class="login-group">
+                <label>Username:</label>
+                <input type="text" name="username" required>
+            </div>
+                <div class="login-group">
                     <label>Password:</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" name="password" required>
                 </div>
-
-                <button type="submit" class="add-to-cart">Login</button>
+                <button type="submit">Login</button>
             </form>
 
             <p style="margin-top: 20px;"> Don't have an account? <a href="register.jsp" style="color: var(--primary-color);">Register here</a></p>
