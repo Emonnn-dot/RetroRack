@@ -48,7 +48,9 @@
                 </p>
             </div>
 
-            <button type="submit">Complete Order</button>
+            <button type="button" onclick="window.location.href='success.html'">
+                Complete Order
+            </button>
 
             <div style="text-align: center; margin-top: 15px;">
                 <a href="cart.jsp" style="color: var(--text-color); text-decoration: none; font-size: 0.9em;">
