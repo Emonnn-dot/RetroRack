@@ -1,15 +1,20 @@
 package util;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.List;
-import model.Product; // Import kelas model
+import java.util.*;
+
+// Import class model
+import model.User;
+import model.Product;
+import model.Order;
 
 public class FileHandler {
 
-    // Lokasi fail untuk menyimpan data produk
+    // Lokasi fail untuk menyimpan data
     private static final String PRODUCT_FILE_PATH = "data/products.txt";
+    private static final String USER_FILE_PATH = "data/users.txt";
+    private static final String ORDER_FILE_PATH = "data/orders.txt";
+
 
     public List<Product> loadProducts() {
         List<Product> products = new ArrayList<>();
@@ -58,9 +63,64 @@ public class FileHandler {
                 writer.write(line);
             }
         } catch (IOException e) {
-            System.err.println("Ralat semasa menyimpan produk: " + e.getMessage());
+            System.err.println("Error when saving product: " + e.getMessage());
         }
     }
 
-    //tambah kaedah loadUsers(), saveUsers(), dan lain-lain di sini.
+    //USER HANDLING
+    public void saveUser(User user) //Save new user information
+    {
+        new File("data").mkdirs();
+
+        try (FileWriter writer = new FileWriter(USEr_FILE, true)) // true enables appending
+        {
+            String line = String.format("%s,%s,%s,%s,%s\n", user.getUserID(),
+                    user.getUsername(), user.getEmail(),
+                    user.getPassword(), "Customer");
+            writer.write(line);
+        }
+        catch (IOException e)
+        {
+            System.err.println("Error when saving user info: " + e.getMessage());
+        }
+    }
+
+    public User validateUser(String username, String password) //check if user registered
+    {
+        try (Scanner scanner = new Scanner(new File(USER_FILE_PATH)))
+        {
+            while (scanner.hasNextLine()) {
+                String parts[] = scanner.nextLine().split(",");
+                // Check if username and pass same
+                if (parts.length >= 4 && parts[1].equals(username) && parts[3].equals(password))
+                {
+                    return new User(parts[0], parts[1], parts[2],
+                            parts[3], parts[4]); // return if user found
+
+                }
+            }
+        }
+        catch (FileNotFoundException e)
+        {
+            return null; // user not registered
+        }
+        return null;
+    }
+
+    //ORDER HANDLING
+    public void saveOrder(Order order, String userID) // creates and save new order
+    {
+        new File("data").mkdirs();
+
+        try (FileWriter writer = new FileWriter(ORDER_FILE_PATH, true))
+        {
+            String line = String.format("%s, %s, %.2f, %s\n", order.getOrderId(),
+                    userID, order.getOrderTotal(), order.getStatus());
+        }
+        catch (IOException e)
+        {
+            System.err.println("Error when saving order: " + e.getMessage());
+        }
+    }
+
 }
