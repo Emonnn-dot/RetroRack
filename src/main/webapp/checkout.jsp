@@ -1,3 +1,11 @@
+<%
+    // Security Check: If user is not logged in, kick them to login page
+    if (session.getAttribute("currentUser") == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
+
 <%@ page import="model.Cart, model.CartItem" %>
 <%
     Cart cart = (Cart) session.getAttribute("cart");
