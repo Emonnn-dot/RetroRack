@@ -116,6 +116,7 @@ public class FileHandler {
         {
             String line = String.format("%s, %s, %.2f, %s\n", order.getOrderId(),
                     userID, order.getOrderTotal(), order.getStatus());
+            writer.write(line);
         }
         catch (IOException e)
         {
