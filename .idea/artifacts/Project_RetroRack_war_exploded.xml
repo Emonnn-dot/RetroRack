@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Project RetroRack:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Project_RetroRack_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Project RetroRack" />
+        </element>
+      </element>
+      <element id="library" level="project" name="servlet-api" />
+      <element id="javaee-facet-resources" facet="Project RetroRack/web/Web" />
+    </root>
+  </artifact>
+</component>
