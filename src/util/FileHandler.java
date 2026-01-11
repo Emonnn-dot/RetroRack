@@ -72,7 +72,7 @@ public class FileHandler {
     {
         new File("data").mkdirs();
 
-        try (FileWriter writer = new FileWriter(USEr_FILE, true)) // true enables appending
+        try (FileWriter writer = new FileWriter(USER_FILE_PATH, true)) // true enables appending
         {
             String line = String.format("%s,%s,%s,%s,%s\n", user.getUserID(),
                     user.getUsername(), user.getEmail(),
