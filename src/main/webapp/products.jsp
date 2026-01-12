@@ -92,6 +92,7 @@
                <button class="add-to-cart" onclick="location.href='AddToCartServlet?productId=P006&quantity=1'">
                       Add to Cart
                       </button>
+            </div>
         </div>
     </main>
 
