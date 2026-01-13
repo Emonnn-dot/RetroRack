@@ -15,7 +15,7 @@
             <img src="logo-retro.png" alt="Retro Rack" class="admin-logo" style="width: 100px; display: block; margin: 0 auto;">
         </div>
         <ul class="nav-menu">
-            <li class="nav-item" onclick="window.location.href='dashboard.html'"><a><i class='bx bx-grid-alt'></i> Dashboard</a></li>
+            <li class="nav-item" onclick="window.location.href='dashboard.jsp'"><a><i class='bx bx-grid-alt'></i> Dashboard</a></li>
             <li class="nav-item active"><a><i class='bx bx-shopping-bag'></i> Manage Orders</a></li>
             <li class="nav-item" id="themeToggle"><a><i class='bx bx-moon'></i> <span class="theme-text">Dark Mode</span></a></li>
         </ul>
@@ -175,7 +175,7 @@
         // Prepare and print the order report
         function printReport() {
             document.getElementById('printMeta').innerText =
-                `Admin: RetroAdmin_01 | Date Generated: ${new Date().toLocaleString()}`;
+                `Admin: RetroAdmin_01 | Date Generated: ${Date().toLocaleString()}`;
             window.print();
         }
 

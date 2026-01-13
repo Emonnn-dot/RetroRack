@@ -1,3 +1,4 @@
+<%@ page import="model.User" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,19 +20,22 @@
     <a href="cart.jsp">Cart</a>
 
     <%-- Java Code to check if user is logged in --%>
-    <%
-        if (session.getAttribute("currentUser") != null)
-            {
-    %>
-    <a href="LogoutServlet" class="account-btn">Logout</a>
-    <%
-    }
-    else {
-    %>
-    <a href="login.jsp" class="account-btn">Login</a>
-    <%
-        }
-    %>
+       <%
+           User user = (User) session.getAttribute("currentUser");
+           if (user != null) {
+       %>
+       <% if ("Admin".equalsIgnoreCase(user.getRole())) { %>
+       <a href="adminSide/dashboard.jsp" style="color: red; font-weight: bold;">Admin Panel</a>
+       <% } %>
+
+       <a href="LogoutServlet" class="account-btn">Logout</a>
+       <%
+       } else {
+       %>
+       <a href="login.jsp" class="account-btn">Login</a>
+       <%
+           }
+       %>
 
    </nav>
 

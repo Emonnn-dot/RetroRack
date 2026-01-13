@@ -1,3 +1,14 @@
+<%@ page import="model.User" %>
+<%
+    // SECURITY CHECK
+    User currentUser = (User) session.getAttribute("currentUser");
+    if (currentUser == null || !"Admin".equalsIgnoreCase(currentUser.getRole())) {
+        // If not logged in OR not an Admin, kick them out!
+        response.sendRedirect("../login.jsp");
+        return;
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +28,7 @@
             <li class="nav-item active" onclick="showSection('dashboard')"><a><i class='bx bx-grid-alt'></i> Dashboard</a></li>
             <li class="nav-item" onclick="showSection('products')"><a><i class='bx bx-package'></i> Products</a></li>
             <li class="nav-item" onclick="showSection('customers')"><a><i class='bx bx-user'></i> Customers</a></li>
-            <li class="nav-item" onclick="window.location.href='manageOrder.html'">
+            <li class="nav-item" onclick="window.location.href='manageOrder.jsp'">
                 <a><i class='bx bx-shopping-bag'></i> Manage Orders</a>
             </li>
             <li class="nav-item" onclick="showSection('settings')"><a><i class='bx bx-cog'></i> Settings</a></li>

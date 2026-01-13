@@ -20,13 +20,20 @@ public class LoginServlet extends HttpServlet {
         if (validUser != null) {
             // LOGIN SUCCESS: Create Session
             HttpSession session = request.getSession();
-            session.setAttribute("currentUser", validUser); // Store the User object
+            session.setAttribute("currentUser", validUser);
             session.setAttribute("isLoggedIn", true);
 
-            response.sendRedirect("index.jsp");
-        } else {
-            // LOGIN FAILED
-            response.sendRedirect("login.jsp?error=invalid");
+            // Check Role and Redirect accordingly
+            if ("Admin".equalsIgnoreCase(validUser.getRole()))
+            {
+                // If Admin -> Go to Admin Dashboard
+                response.sendRedirect("adminSide/dashboard.jsp");
+            }
+            else
+            {
+                // If Customer -> Go to Main Homepage
+                response.sendRedirect("index.jsp");
+            }
         }
     }
 }

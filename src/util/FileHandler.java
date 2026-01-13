@@ -25,7 +25,7 @@ public class FileHandler {
             folder.mkdirs(); // Create the folder if it doesn't exist
         }
     }
-
+/*
     // --- SAVE USER ---
     public boolean saveUser(User user) {
         try (FileWriter writer = new FileWriter(USER_FILE_PATH, true)) {
@@ -79,9 +79,9 @@ public class FileHandler {
     // Stub for products (kept to avoid errors)
     public List<Product> loadProducts() { return new ArrayList<>(); }
     public void saveProducts(List<Product> p) {}
+*/
 
-
-    /*public List<Product> loadProducts() {
+    public List<Product> loadProducts() {
         List<Product> products = new ArrayList<>();
         // Pastikan direktori 'data' wujud
         new File("BASE_PATH").mkdirs();
@@ -133,7 +133,7 @@ public class FileHandler {
     }
 
     //USER HANDLING
-    public void saveUser(User user) //Save new user information
+    public boolean saveUser(User user) //Save new user information
     {
         new File("BASE_PATH").mkdirs();
 
@@ -143,10 +143,12 @@ public class FileHandler {
                     user.getUsername(), user.getEmail(),
                     user.getPassword(), "Customer");
             writer.write(line);
+            return true;
         }
         catch (IOException e)
         {
             System.err.println("Error when saving user info: " + e.getMessage());
+            return false;
         }
     }
 
@@ -187,6 +189,6 @@ public class FileHandler {
         {
             System.err.println("Error when saving order: " + e.getMessage());
         }
-    }*/
+    }
 
 }
