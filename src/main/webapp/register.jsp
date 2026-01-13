@@ -18,7 +18,8 @@
         <h2>Create Account</h2>
         <div class="divider"></div>
 
-        <form action="RegisterServlet" method="POST"> <div class="login-group">
+        <form id="registerForm" action="${pageContext.request.contextPath}/RegisterServlet" method="POST">
+            <div class="login-group">
             <label>Username:</label>
             <input type="text" name="username" required>
         </div>

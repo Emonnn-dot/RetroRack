@@ -20,7 +20,7 @@
             <p style="color:red;">Invalid Username or Password!</p>
             <% } %>
 
-            <form action="LoginServlet" method="POST"> <div class="login-group">
+            <form action="${pageContext.request.contextPath}/LoginServlet" method="POST"> <div class="login-group">
                 <label>Username:</label>
                 <input type="text" name="username" required>
             </div>

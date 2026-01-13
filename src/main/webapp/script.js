@@ -90,9 +90,9 @@ if (registerForm) {
             return;
         }
 
-        event.preventDefault(); // Stop for demo
+        /*vent.preventDefault(); // Stop for demo
         alert("Registration successful! Redirecting to login page...");
-        window.location.href = "login.jsp";
+        window.location.href = "login.jsp";*/
     });
 }
 
@@ -143,10 +143,10 @@ if (payForm) {
             return;
         }
 
-       
+       /*
         event.preventDefault();
         alert("Validation success! Your order is being processed.");
-        
+        */
        
         //window.location.href = "success.jsp";
     });

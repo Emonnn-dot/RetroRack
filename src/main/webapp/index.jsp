@@ -17,7 +17,22 @@
     <a href="index.jsp">Home</a>
     <a href="products.jsp">Products</a>
     <a href="cart.jsp">Cart</a>
-    <a href="login.jsp" class="account-btn">Account</a>
+
+    <%-- Java Code to check if user is logged in --%>
+    <%
+        if (session.getAttribute("currentUser") != null)
+            {
+    %>
+    <a href="LogoutServlet" class="account-btn">Logout</a>
+    <%
+    }
+    else {
+    %>
+    <a href="login.jsp" class="account-btn">Login</a>
+    <%
+        }
+    %>
+
    </nav>
 
    <main>

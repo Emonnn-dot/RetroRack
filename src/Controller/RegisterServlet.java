@@ -11,7 +11,6 @@ import java.util.UUID;
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -23,9 +22,15 @@ public class RegisterServlet extends HttpServlet {
         User newUser = new User(userID, username, email, password, "Customer");
 
         FileHandler fh = new FileHandler();
-        fh.saveUser(newUser);
+        boolean isSaved = fh.saveUser(newUser);
 
         // Redirect to login with success message
-        response.sendRedirect("login.jsp?status=registered");
+        if (isSaved) {
+            // Success: Go to login
+            response.sendRedirect("login.jsp?status=registered");
+        } else {
+            // Failure: Stay on register page and show error
+            response.sendRedirect("register.jsp?status=error");
+        }
     }
 }
